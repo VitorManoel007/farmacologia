@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 
-import heroImg from "@assets/Captura_de_tela_2026-05-15_094733_1778858131815.png";
+import heroImg from "@assets/magnific_quero-que-voce-mude-o-ult_2989036019-Photoroom_1778858706667.png";
 import carouselImg from "@assets/Captura_de_tela_2026-05-15_094756_1778858131816.png";
 import benefitsImg from "@assets/Captura_de_tela_2026-05-15_094845_1778858131816.png";
 import beforeAfterImg from "@assets/Captura_de_tela_2026-05-15_094915_1778858131816.png";
@@ -86,8 +86,8 @@ function LandingPage() {
               ))}
             </div>
 
-            <div className="w-full aspect-[4/3] relative rounded-2xl overflow-hidden mb-8 border border-border">
-              <img src={heroImg} alt="Mockup do material" className="w-full h-full object-cover object-center" />
+            <div className="w-full mb-8 flex items-center justify-center">
+              <img src={heroImg} alt="Mockup do material" className="w-full max-w-[380px] object-contain drop-shadow-2xl" />
             </div>
 
             <div className="bg-secondary/50 rounded-lg p-4 mb-6 flex items-start gap-3 border border-border">
