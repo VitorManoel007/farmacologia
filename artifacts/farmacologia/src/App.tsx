@@ -130,11 +130,11 @@ function LandingPage() {
                 { label: "Acetazolamida — Diurético", img: carouselImg5 },
                 { label: "Ácido Ascórbico — Vitamina C", img: carouselImg6 },
               ].map((item, i) => (
-                <div key={i} className="snap-center shrink-0 w-[260px] flex flex-col gap-3">
-                  <div className="aspect-[3/4] rounded-xl bg-gray-100 overflow-hidden relative shadow-sm border border-gray-200">
-                    <img src={item.img} alt={item.label} className="w-full h-full object-cover opacity-90" />
+                <div key={i} className="snap-center shrink-0 w-[220px] flex flex-col gap-2">
+                  <div className="w-[220px] h-[220px] rounded-xl bg-white overflow-hidden shadow-md border border-gray-200 flex items-center justify-center">
+                    <img src={item.img} alt={item.label} className="w-full h-full object-contain" />
                   </div>
-                  <h3 className="font-bold text-sm text-center">{item.label}</h3>
+                  <h3 className="font-semibold text-xs text-center text-gray-700 px-1 leading-snug">{item.label}</h3>
                 </div>
               ))}
             </div>
