@@ -428,7 +428,7 @@ function LandingPage() {
         {/* BLOCO 09 — GARANTIA (dark navy) */}
         <section className="px-6 py-14 bg-background text-center">
           <FadeIn>
-            <img src={garantiaImg} alt="Garantia 7 Dias" className="w-40 h-40 mx-auto mb-6 object-contain drop-shadow-2xl" />
+            <img src={garantiaImg} alt="Garantia 7 Dias" className="w-64 h-64 mx-auto mb-6 object-contain drop-shadow-2xl" />
 
             <h2 className="font-display text-4xl sm:text-5xl font-black leading-none uppercase mb-4">
               TESTE POR <br/>
