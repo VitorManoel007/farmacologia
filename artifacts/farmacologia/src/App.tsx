@@ -482,7 +482,6 @@ function LandingPage() {
                 { icon: Lock, text: "Compra Segura" },
                 { icon: Mail, text: "Acesso Imediato" },
                 { icon: CreditCard, text: "Pagamento Protegido" },
-                { icon: Headphones, text: "Suporte ao Aluno" }
               ].map((badge, i) => (
                 <div key={i} className="flex items-center gap-1.5 text-[11px] font-bold uppercase text-gray-400">
                   <badge.icon className="w-3.5 h-3.5 text-primary" />
