@@ -41,7 +41,7 @@ const FadeIn = ({ children, delay = 0, className = "" }: { children: React.React
 
 const CTAButton = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
   <Button 
-    className={`w-full bg-primary hover:bg-[#a3e635] text-[#0D0F1C] font-black text-lg h-16 rounded-xl uppercase tracking-wide shadow-[0_4px_14px_rgba(182,255,59,0.4)] transition-transform hover:-translate-y-1 active:translate-y-0 ${className}`}
+    className={`w-full bg-primary hover:bg-[#a3e635] text-[#0D0F1C] font-black text-base min-h-16 h-auto py-4 px-4 rounded-xl uppercase tracking-wide whitespace-normal leading-tight text-center shadow-[0_4px_14px_rgba(182,255,59,0.4)] transition-transform hover:-translate-y-1 active:translate-y-0 ${className}`}
   >
     {children}
   </Button>
