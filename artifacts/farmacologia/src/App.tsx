@@ -24,6 +24,10 @@ import beforeAfterImg from "@assets/magnific_quero-que-mude-o-tema-que_298926390
 import garantiaImg from "@assets/ea2f6b28975c2ded20e94d7e88c8db5f-Photoroom_1778949445674.png";
 import comboCompletoImg from "@assets/magnific_quero-que-voce-mude-o-ult_2989036019-Photoroom_1778949609656.png";
 import comboEssencialImg from "@assets/magnific__quero-que-pague-o-elemento-principal-e-retiro-que-___1778949793083.png";
+import testimonialImg1 from "@assets/63b82082514d9837a3df276e1b356bba_1778950811652.jpg";
+import testimonialImg2 from "@assets/baixados_1778950811652.png";
+import testimonialImg3 from "@assets/346e0250a7bd4237d89e210dd9f60c71_1778950811653.jpg";
+import testimonialImg4 from "@assets/917467dffbdfecc9d25e166ccfb23d6b_1778950811653.jpg";
 import resultsImg from "@assets/Captura_de_tela_2026-05-15_094946_1778858131817.png";
 import painImg from "@assets/Captura_de_tela_2026-05-15_095003_1778858131817.png";
 import idealImg from "@assets/Captura_de_tela_2026-05-15_095040_1778858131817.png";
@@ -435,26 +439,24 @@ function LandingPage() {
 
             <div className="grid grid-cols-1 gap-4">
               {[
-                "Finalmente consegui revisar farmacologia sem ficar perdido em textos enormes.",
-                "Usei antes da prova e consegui memorizar muito mais rápido.",
-                "O material deixa tudo mais simples e organizado visualmente.",
-                "Perfeito para revisão de estágio e plantão."
-              ].map((text, i) => (
+                { name: "Amanda Ferreira", text: "Finalmente consegui revisar farmacologia sem ficar perdida em textos enormes. Os mapas são incríveis!", img: testimonialImg1 },
+                { name: "Mayara Souza", text: "Usei antes da prova e consegui memorizar muito mais rápido. Recomendo demais para quem estuda saúde!", img: testimonialImg2 },
+                { name: "Camila Ramos", text: "O material deixa tudo mais simples e organizado visualmente. Mudou completamente minha forma de estudar.", img: testimonialImg3 },
+                { name: "Priscila Alves", text: "Perfeito para revisão de estágio e plantão. Consigo revisar um medicamento inteiro em minutos!", img: testimonialImg4 },
+              ].map((t, i) => (
                 <div key={i} className="bg-gray-50 border border-gray-200 rounded-xl p-5 shadow-sm">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-gray-500 font-bold">
-                      {["A", "M", "C", "P"][i]}
-                    </div>
+                    <img src={t.img} alt={t.name} className="w-11 h-11 rounded-full object-cover object-top shrink-0 border-2 border-gray-200" />
                     <div>
-                      <div className="flex gap-0.5">
+                      <p className="text-sm font-bold text-gray-800">{t.name}</p>
+                      <div className="flex gap-0.5 mt-0.5">
                         {[...Array(5)].map((_, j) => (
                           <Star key={j} className="w-3.5 h-3.5 fill-[#0D0F1C] text-[#0D0F1C]" />
                         ))}
                       </div>
-                      <p className="text-xs font-bold mt-0.5 text-gray-500">Estudante Verificado</p>
                     </div>
                   </div>
-                  <p className="text-sm font-medium leading-relaxed italic text-gray-700">"{text}"</p>
+                  <p className="text-sm font-medium leading-relaxed italic text-gray-700">"{t.text}"</p>
                 </div>
               ))}
             </div>
