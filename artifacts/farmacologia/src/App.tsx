@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import heroImg from "@assets/magnific_quero-que-voce-mude-o-ult_2989036019-Photoroom_1778858706667.png";
 import carouselImg from "@assets/Captura_de_tela_2026-05-15_094756_1778858131816.png";
 import benefitsImg from "@assets/Captura_de_tela_2026-05-15_094845_1778858131816.png";
-import beforeAfterImg from "@assets/Captura_de_tela_2026-05-15_094915_1778858131816.png";
+import beforeAfterImg from "@assets/magnific_quero-que-mude-o-tema-que_2989263901_1778947691324.png";
 import resultsImg from "@assets/Captura_de_tela_2026-05-15_094946_1778858131817.png";
 import painImg from "@assets/Captura_de_tela_2026-05-15_095003_1778858131817.png";
 import idealImg from "@assets/Captura_de_tela_2026-05-15_095040_1778858131817.png";
