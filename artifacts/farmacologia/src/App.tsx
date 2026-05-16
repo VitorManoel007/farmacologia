@@ -114,7 +114,6 @@ function LandingPage() {
               </p>
             </div>
 
-            <CTAButton onClick={scrollToOfertas}>QUERO A OFERTA</CTAButton>
           </FadeIn>
         </section>
 
