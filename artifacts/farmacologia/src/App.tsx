@@ -439,10 +439,10 @@ function LandingPage() {
 
             <div className="grid grid-cols-1 gap-4">
               {[
-                { name: "Amanda Ferreira", text: "Finalmente consegui revisar farmacologia sem ficar perdida em textos enormes. Os mapas são incríveis!", img: testimonialImg1 },
-                { name: "Mayara Souza", text: "Usei antes da prova e consegui memorizar muito mais rápido. Recomendo demais para quem estuda saúde!", img: testimonialImg2 },
-                { name: "Camila Ramos", text: "O material deixa tudo mais simples e organizado visualmente. Mudou completamente minha forma de estudar.", img: testimonialImg3 },
-                { name: "Priscila Alves", text: "Perfeito para revisão de estágio e plantão. Consigo revisar um medicamento inteiro em minutos!", img: testimonialImg4 },
+                { name: "Amanda Ferreira", text: "Gente, eu tava travada em farmaco há meses. Comprei sem muita expectativa e me surpreendi. Os mapas são bem completos e visuais, dá pra revisar um med em poucos minutos. Valeu cada centavo.", img: testimonialImg1 },
+                { name: "Mayara Souza", text: "Usei na véspera da prova de farmacologia clínica e fui muito melhor do que esperava. Consegui lembrar de mecanismo de ação, efeitos adversos, tudo. Antes ficava só lendo e esquecia no dia seguinte.", img: testimonialImg2 },
+                { name: "Camila Ramos", text: "Nunca achei que ia gostar de farmaco, mas com esse material ficou mais fácil de entender. Os mapas organizam o conteúdo de um jeito que faz sentido. Já recomendei pra toda a minha turma.", img: testimonialImg3 },
+                { name: "Priscila Alves", text: "Uso pra revisar antes dos plantões no hospital. É rápido, prático e cabe no celular. Só no Abacavir já valeu, que era o que eu mais confundia. Compra sem medo!", img: testimonialImg4 },
               ].map((t, i) => (
                 <div key={i} className="bg-gray-50 border border-gray-200 rounded-xl p-5 shadow-sm">
                   <div className="flex items-center gap-3 mb-3">
