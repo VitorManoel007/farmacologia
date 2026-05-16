@@ -22,6 +22,7 @@ import carouselImg6 from "@assets/Captura_de_tela_2026-05-15_112259_177894798460
 import benefitsImg from "@assets/Captura_de_tela_2026-05-15_094845_1778858131816.png";
 import beforeAfterImg from "@assets/magnific_quero-que-mude-o-tema-que_2989263901-Photoroom_1778947859877.png";
 import garantiaImg from "@assets/ea2f6b28975c2ded20e94d7e88c8db5f-Photoroom_1778949445674.png";
+import comboCompletoImg from "@assets/magnific_quero-que-voce-mude-o-ult_2989036019-Photoroom_1778949609656.png";
 import resultsImg from "@assets/Captura_de_tela_2026-05-15_094946_1778858131817.png";
 import painImg from "@assets/Captura_de_tela_2026-05-15_095003_1778858131817.png";
 import idealImg from "@assets/Captura_de_tela_2026-05-15_095040_1778858131817.png";
@@ -350,19 +351,27 @@ function LandingPage() {
               </div>
 
               {/* CARD 2 — COMBO COMPLETO */}
-              <div className="bg-card border-2 border-primary rounded-2xl p-6 relative shadow-[0_0_20px_rgba(182,255,59,0.15)] mt-4">
-                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-primary text-[#0D0F1C] text-[11px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap flex items-center gap-1.5 shadow-sm">
-                  <Star className="w-3 h-3 fill-current" /> MAIS ESCOLHIDO PELOS ESTUDANTES
+              <div className="bg-card border-2 border-primary rounded-2xl p-6 relative shadow-[0_0_30px_rgba(182,255,59,0.25)] mt-4">
+                {/* Badge topo */}
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
+                  <div className="bg-destructive text-white text-[11px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap flex items-center gap-1.5 shadow-md">
+                    🔥 MAIS VENDIDO
+                  </div>
                 </div>
 
-                <h3 className="font-bold text-xl uppercase mb-2">COMBO COMPLETO</h3>
-                <div className="flex items-end gap-1 mb-1">
-                  <span className="text-lg font-bold text-primary">R$</span>
-                  <span className="font-display text-5xl font-black leading-none text-primary">25,00</span>
+                {/* Título destaque */}
+                <div className="mt-4 mb-4 text-center">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-primary/70">Plano</span>
+                  <h3 className="font-display text-4xl font-black uppercase leading-none text-primary">COMPLETO</h3>
                 </div>
-                <p className="text-sm font-medium text-muted-foreground mb-6">Pagamento único</p>
-                
-                <ul className="space-y-3 mb-8">
+
+                {/* Imagem do kit */}
+                <div className="flex justify-center mb-4">
+                  <img src={comboCompletoImg} alt="Kit Completo de Farmacologia" className="w-full max-w-xs object-contain drop-shadow-xl" />
+                </div>
+
+                {/* Benefícios */}
+                <ul className="space-y-3 mb-6">
                   {[
                     "Tudo do Combo Essencial",
                     "Guia de Antimicrobianos",
@@ -382,6 +391,16 @@ function LandingPage() {
                     </li>
                   ))}
                 </ul>
+
+                {/* Preço após benefícios */}
+                <div className="border-t border-border pt-5 mb-6 text-center">
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">Apenas</p>
+                  <div className="flex items-end justify-center gap-1">
+                    <span className="text-xl font-bold text-primary">R$</span>
+                    <span className="font-display text-6xl font-black leading-none text-primary">25,00</span>
+                  </div>
+                  <p className="text-xs font-medium text-muted-foreground mt-1">Pagamento único • Acesso imediato</p>
+                </div>
 
                 <CTAButton>GARANTIR COMBO COMPLETO</CTAButton>
               </div>
