@@ -21,6 +21,7 @@ import carouselImg5 from "@assets/Captura_de_tela_2026-05-15_110531_177894798460
 import carouselImg6 from "@assets/Captura_de_tela_2026-05-15_112259_1778947984605.png";
 import benefitsImg from "@assets/Captura_de_tela_2026-05-15_094845_1778858131816.png";
 import beforeAfterImg from "@assets/magnific_quero-que-mude-o-tema-que_2989263901-Photoroom_1778947859877.png";
+import garantiaImg from "@assets/ea2f6b28975c2ded20e94d7e88c8db5f-Photoroom_1778949445674.png";
 import resultsImg from "@assets/Captura_de_tela_2026-05-15_094946_1778858131817.png";
 import painImg from "@assets/Captura_de_tela_2026-05-15_095003_1778858131817.png";
 import idealImg from "@assets/Captura_de_tela_2026-05-15_095040_1778858131817.png";
@@ -427,13 +428,7 @@ function LandingPage() {
         {/* BLOCO 09 — GARANTIA (dark navy) */}
         <section className="px-6 py-14 bg-background text-center">
           <FadeIn>
-            <div className="w-24 h-24 mx-auto bg-primary rounded-full flex items-center justify-center mb-6 shadow-[0_0_30px_rgba(182,255,59,0.3)]">
-              <span className="font-display text-5xl font-black text-[#0D0F1C] mt-2">7</span>
-              <span className="text-xs font-black text-[#0D0F1C] uppercase ml-1 flex flex-col items-start leading-none mt-1">
-                <span>DIAS</span>
-                <span className="text-[8px]">GARANTIA</span>
-              </span>
-            </div>
+            <img src={garantiaImg} alt="Garantia 7 Dias" className="w-40 h-40 mx-auto mb-6 object-contain drop-shadow-2xl" />
 
             <h2 className="font-display text-4xl sm:text-5xl font-black leading-none uppercase mb-4">
               TESTE POR <br/>
