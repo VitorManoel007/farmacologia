@@ -330,18 +330,18 @@ function LandingPage() {
 
                 {/* Imagem do produto */}
                 <div className="flex justify-center mb-4">
-                  <img src={comboEssencialImg} alt="Kit Essencial de Farmacologia" className="w-full max-w-[220px] object-contain drop-shadow-xl" />
+                  <img src={comboEssencialImg} alt="Kit Essencial de Farmacologia" className="w-full max-w-xs object-contain drop-shadow-xl" />
                 </div>
 
                 {/* Benefícios */}
                 <ul className="space-y-3 mb-6">
                   {[
-                    "+110 páginas de mapas mentais",
-                    "Principais classes farmacológicas",
-                    "Conteúdo visual e organizado",
-                    "Revisões rápidas",
-                    "Material em PDF",
-                    "Acesso imediato"
+                    "+110 mapas mentais de medicamentos completos",
+                    "Antirretrovirais, Anticancerígenos e Antidiabéticos",
+                    "Mecanismo de ação, dose e contraindicações",
+                    "Revise qualquer medicamento em menos de 2 minutos",
+                    "PDF otimizado para celular e tablet",
+                    "Link no e-mail logo após a confirmação"
                   ].map((item, i) => (
                     <li key={i} className="flex items-center gap-2.5 text-[15px] font-medium text-gray-300">
                       <Check className="w-4 h-4 text-primary shrink-0" strokeWidth={3} />
