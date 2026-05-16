@@ -429,7 +429,9 @@ function LandingPage() {
                   <p className="text-xs font-medium text-muted-foreground mt-1">Pagamento único • Acesso imediato</p>
                 </div>
 
-                <CTAButton>GARANTIR COMBO COMPLETO</CTAButton>
+                <a href="https://pay.cakto.com.br/ers4bn6_887486" target="_blank" rel="noopener noreferrer" className="block">
+                  <CTAButton>GARANTIR COMBO COMPLETO</CTAButton>
+                </a>
               </div>
             </div>
           </FadeIn>
