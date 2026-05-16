@@ -23,6 +23,7 @@ import benefitsImg from "@assets/Captura_de_tela_2026-05-15_094845_1778858131816
 import beforeAfterImg from "@assets/magnific_quero-que-mude-o-tema-que_2989263901-Photoroom_1778947859877.png";
 import garantiaImg from "@assets/ea2f6b28975c2ded20e94d7e88c8db5f-Photoroom_1778949445674.png";
 import comboCompletoImg from "@assets/magnific_quero-que-voce-mude-o-ult_2989036019-Photoroom_1778949609656.png";
+import comboEssencialImg from "@assets/magnific__quero-que-pague-o-elemento-principal-e-retiro-que-___1778949793083.png";
 import resultsImg from "@assets/Captura_de_tela_2026-05-15_094946_1778858131817.png";
 import painImg from "@assets/Captura_de_tela_2026-05-15_095003_1778858131817.png";
 import idealImg from "@assets/Captura_de_tela_2026-05-15_095040_1778858131817.png";
@@ -322,14 +323,18 @@ function LandingPage() {
             <div className="flex flex-col gap-6">
               {/* CARD 1 — COMBO ESSENCIAL */}
               <div className="bg-card border border-border rounded-2xl p-6">
-                <h3 className="font-bold text-xl uppercase mb-2">COMBO ESSENCIAL</h3>
-                <div className="flex items-end gap-1 mb-1">
-                  <span className="text-lg font-bold text-muted-foreground">R$</span>
-                  <span className="font-display text-5xl font-black leading-none">10,00</span>
+                <div className="mb-4 text-center">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Plano</span>
+                  <h3 className="font-display text-4xl font-black uppercase leading-none text-white">ESSENCIAL</h3>
                 </div>
-                <p className="text-sm font-medium text-muted-foreground mb-6">Pagamento único</p>
-                
-                <ul className="space-y-3 mb-8">
+
+                {/* Imagem do produto */}
+                <div className="flex justify-center mb-4">
+                  <img src={comboEssencialImg} alt="Kit Essencial de Farmacologia" className="w-full max-w-[220px] object-contain drop-shadow-xl" />
+                </div>
+
+                {/* Benefícios */}
+                <ul className="space-y-3 mb-6">
                   {[
                     "+110 páginas de mapas mentais",
                     "Principais classes farmacológicas",
@@ -345,7 +350,17 @@ function LandingPage() {
                   ))}
                 </ul>
 
-                <Button className="w-full bg-secondary hover:bg-secondary/80 text-white font-bold h-14 rounded-xl uppercase tracking-wide border border-border">
+                {/* Preço abaixo dos benefícios em verde */}
+                <div className="border-t border-border pt-5 mb-6 text-center">
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">Apenas</p>
+                  <div className="flex items-end justify-center gap-1">
+                    <span className="text-xl font-bold text-primary">R$</span>
+                    <span className="font-display text-6xl font-black leading-none text-primary">10,00</span>
+                  </div>
+                  <p className="text-xs font-medium text-muted-foreground mt-1">Pagamento único • Acesso imediato</p>
+                </div>
+
+                <Button className="w-full bg-secondary hover:bg-secondary/80 text-white font-bold min-h-14 h-auto py-4 rounded-xl uppercase tracking-wide border border-border whitespace-normal leading-tight text-center">
                   GARANTIR COMBO ESSENCIAL
                 </Button>
               </div>
