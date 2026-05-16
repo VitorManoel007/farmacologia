@@ -370,9 +370,11 @@ function LandingPage() {
                   <p className="text-xs font-medium text-muted-foreground mt-1">Pagamento único • Acesso imediato</p>
                 </div>
 
-                <Button className="w-full bg-secondary hover:bg-secondary/80 text-white font-bold min-h-14 h-auto py-4 rounded-xl uppercase tracking-wide border border-border whitespace-normal leading-tight text-center">
-                  GARANTIR COMBO ESSENCIAL
-                </Button>
+                <a href="https://pay.cakto.com.br/3asoehq_887420" target="_blank" rel="noopener noreferrer" className="block">
+                  <Button className="w-full bg-secondary hover:bg-secondary/80 text-white font-bold min-h-14 h-auto py-4 rounded-xl uppercase tracking-wide border border-border whitespace-normal leading-tight text-center">
+                    GARANTIR COMBO ESSENCIAL
+                  </Button>
+                </a>
               </div>
 
               {/* CARD 2 — COMBO COMPLETO */}
