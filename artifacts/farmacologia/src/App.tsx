@@ -185,8 +185,38 @@ function LandingPage() {
               <span className="text-primary drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">COM O MATERIAL</span>
             </h2>
 
-            <div className="w-full rounded-2xl overflow-hidden mb-4 shadow-lg">
-               <img src={beforeAfterImg} alt="Comparação" className="w-full h-auto object-contain" />
+            <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-8 shadow-lg border border-gray-200 relative">
+               <img src={beforeAfterImg} alt="Comparação" className="w-full h-full object-cover" />
+            </div>
+
+            <div className="grid grid-cols-1 gap-6">
+              <div className="bg-red-50 rounded-xl p-5 border border-red-100">
+                <h3 className="text-destructive font-black uppercase text-lg flex items-center gap-2 mb-4">
+                  <span className="text-xl">❌</span> SEM O MATERIAL
+                </h3>
+                <ul className="space-y-3">
+                  {["Muito conteúdo espalhado", "Dificuldade para memorizar", "Revisões cansativas", "Confusão entre medicamentos", "Horas estudando sem resultado"].map((item, i) => (
+                    <li key={i} className="text-sm font-medium text-gray-700 flex items-start gap-2">
+                      <div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-green-50 rounded-xl p-5 border border-green-200">
+                <h3 className="text-[#0D0F1C] font-black uppercase text-lg flex items-center gap-2 mb-4">
+                  <span className="text-xl">✅</span> COM O MATERIAL
+                </h3>
+                <ul className="space-y-3">
+                  {["Estudo visual e organizado", "Revisão rápida e eficiente", "Memorização acelerada", "Mais confiança nas provas", "Conteúdo simplificado"].map((item, i) => (
+                    <li key={i} className="text-sm font-medium text-gray-800 flex items-start gap-2">
+                      <Check className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </FadeIn>
         </section>
