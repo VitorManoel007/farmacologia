@@ -343,8 +343,10 @@ function LandingPage() {
                     "PDF otimizado para celular e tablet",
                     "Link no e-mail logo após a confirmação"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-[15px] font-medium text-gray-300">
-                      <Check className="w-4 h-4 text-primary shrink-0" strokeWidth={3} />
+                    <li key={i} className="flex items-center gap-2.5 text-[15px] font-medium text-white">
+                      <div className="w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+                        <Check className="w-2.5 h-2.5 text-primary" strokeWidth={4} />
+                      </div>
                       {item}
                     </li>
                   ))}
