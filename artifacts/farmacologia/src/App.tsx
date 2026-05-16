@@ -193,8 +193,8 @@ function LandingPage() {
               <span className="text-primary drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">COM O MATERIAL</span>
             </h2>
 
-            <div className="w-full aspect-[4/3] rounded-2xl overflow-hidden mb-8 shadow-lg border border-gray-200 relative">
-               <img src={beforeAfterImg} alt="Comparação" className="w-full h-full object-cover" />
+            <div className="w-full mb-8 flex items-center justify-center">
+               <img src={beforeAfterImg} alt="Comparação" className="w-full max-w-sm object-contain drop-shadow-xl" />
             </div>
 
             <div className="grid grid-cols-1 gap-6">
