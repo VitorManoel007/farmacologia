@@ -203,7 +203,13 @@ function LandingPage() {
                   <span className="text-xl">❌</span> SEM O MATERIAL
                 </h3>
                 <ul className="space-y-3">
-                  {["Muito conteúdo espalhado", "Dificuldade para memorizar", "Revisões cansativas", "Confusão entre medicamentos", "Horas estudando sem resultado"].map((item, i) => (
+                  {[
+                    "Confunde beta-bloqueador com bloqueador de canal de cálcio",
+                    "Decora mecanismo hoje, esquece amanhã",
+                    "Perde tempo relendo a mesma apostila 5 vezes",
+                    "Na prova, mistura indicação com contraindicação",
+                    "Horas estudando farmacologia sem sentir evolução"
+                  ].map((item, i) => (
                     <li key={i} className="text-sm font-medium text-gray-700 flex items-start gap-2">
                       <div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 shrink-0" />
                       {item}
@@ -217,7 +223,13 @@ function LandingPage() {
                   <span className="text-xl">✅</span> COM O MATERIAL
                 </h3>
                 <ul className="space-y-3">
-                  {["Estudo visual e organizado", "Revisão rápida e eficiente", "Memorização acelerada", "Mais confiança nas provas", "Conteúdo simplificado"].map((item, i) => (
+                  {[
+                    "Diferencia classes farmacológicas pelo mapa visual",
+                    "Revisão de um medicamento completo em 2 minutos",
+                    "Associa mecanismo de ação com efeito adverso facilmente",
+                    "Chega na prova sabendo indicação, dose e contraindicação",
+                    "Estuda menos tempo com muito mais fixação"
+                  ].map((item, i) => (
                     <li key={i} className="text-sm font-medium text-gray-800 flex items-start gap-2">
                       <Check className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
                       {item}
