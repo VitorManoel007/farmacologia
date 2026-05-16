@@ -46,8 +46,13 @@ const FadeIn = ({ children, delay = 0, className = "" }: { children: React.React
   </motion.div>
 );
 
-const CTAButton = ({ children, className = "" }: { children: React.ReactNode, className?: string }) => (
+const scrollToOfertas = () => {
+  document.getElementById("ofertas")?.scrollIntoView({ behavior: "smooth" });
+};
+
+const CTAButton = ({ children, className = "", onClick }: { children: React.ReactNode, className?: string, onClick?: () => void }) => (
   <Button 
+    onClick={onClick}
     className={`w-full bg-primary hover:bg-[#a3e635] text-[#0D0F1C] font-black text-base min-h-16 h-auto py-4 px-4 rounded-xl uppercase tracking-wide whitespace-normal leading-tight text-center shadow-[0_4px_14px_rgba(182,255,59,0.4)] transition-transform hover:-translate-y-1 active:translate-y-0 ${className}`}
   >
     {children}
@@ -109,7 +114,7 @@ function LandingPage() {
               </p>
             </div>
 
-            <CTAButton>QUERO A OFERTA</CTAButton>
+            <CTAButton onClick={scrollToOfertas}>QUERO A OFERTA</CTAButton>
           </FadeIn>
         </section>
 
@@ -152,7 +157,7 @@ function LandingPage() {
               <p className="text-gray-600 text-sm text-center font-medium leading-relaxed mb-8 px-2">
                 Todos os mapas foram organizados com cores, setas, conexões visuais e estruturas que facilitam a memorização de medicamentos e mecanismos farmacológicos.
               </p>
-              <CTAButton>QUERO ESTUDAR ASSIM</CTAButton>
+              <CTAButton onClick={scrollToOfertas}>QUERO ESTUDAR ASSIM</CTAButton>
             </FadeIn>
           </div>
         </section>
@@ -187,7 +192,7 @@ function LandingPage() {
               ))}
             </div>
 
-            <CTAButton>QUERO MEMORIZAR MAIS RÁPIDO</CTAButton>
+            <CTAButton onClick={scrollToOfertas}>QUERO MEMORIZAR MAIS RÁPIDO</CTAButton>
           </FadeIn>
         </section>
 
@@ -285,7 +290,7 @@ function LandingPage() {
               ))}
             </ul>
 
-            <CTAButton>QUERO ACESSO IMEDIATO</CTAButton>
+            <CTAButton onClick={scrollToOfertas}>QUERO ACESSO IMEDIATO</CTAButton>
           </FadeIn>
         </section>
 
@@ -305,14 +310,14 @@ function LandingPage() {
               Você passa horas lendo farmacologia, tenta decorar nomes impossíveis, revisa inúmeras vezes… e mesmo assim chega na prova sentindo que não lembra de nada. O problema não é sua capacidade. O problema é estudar da forma errada. Seu cérebro aprende muito mais rápido quando o conteúdo é visual, organizado e resumido estrategicamente.
             </p>
 
-            <CTAButton className="!bg-[#0D0F1C] !text-primary hover:!bg-black shadow-[0_4px_14px_rgba(0,0,0,0.3)] border-2 border-[#0D0F1C]">
+            <CTAButton onClick={scrollToOfertas} className="!bg-[#0D0F1C] !text-primary hover:!bg-black shadow-[0_4px_14px_rgba(0,0,0,0.3)] border-2 border-[#0D0F1C]">
               QUERO MUDAR MINHA FORMA DE ESTUDAR
             </CTAButton>
           </FadeIn>
         </section>
 
         {/* BLOCO 07 — OFERTAS (dark navy) */}
-        <section className="px-6 py-14 bg-background">
+        <section id="ofertas" className="px-6 py-14 bg-background">
           <FadeIn>
             <div className="text-center mb-10">
               <h2 className="font-display text-5xl font-black leading-none uppercase mb-3">
