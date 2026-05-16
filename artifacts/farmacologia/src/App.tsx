@@ -13,7 +13,12 @@ import {
 import { Button } from "@/components/ui/button";
 
 import heroImg from "@assets/magnific_quero-que-voce-mude-o-ult_2989036019-Photoroom_1778858706667.png";
-import carouselImg from "@assets/Captura_de_tela_2026-05-15_094756_1778858131816.png";
+import carouselImg1 from "@assets/Captura_de_tela_2026-05-15_110029_1778947984603.png";
+import carouselImg2 from "@assets/Captura_de_tela_2026-05-15_110103_1778947984604.png";
+import carouselImg3 from "@assets/Captura_de_tela_2026-05-15_110126_1778947984604.png";
+import carouselImg4 from "@assets/Captura_de_tela_2026-05-15_110140_1778947984604.png";
+import carouselImg5 from "@assets/Captura_de_tela_2026-05-15_110531_1778947984605.png";
+import carouselImg6 from "@assets/Captura_de_tela_2026-05-15_112259_1778947984605.png";
 import benefitsImg from "@assets/Captura_de_tela_2026-05-15_094845_1778858131816.png";
 import beforeAfterImg from "@assets/magnific_quero-que-mude-o-tema-que_2989263901-Photoroom_1778947859877.png";
 import resultsImg from "@assets/Captura_de_tela_2026-05-15_094946_1778858131817.png";
@@ -118,15 +123,18 @@ function LandingPage() {
           <div className="w-full mb-8">
             <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pl-6 pr-6 gap-4 pb-4">
               {[
-                "Classes Farmacológicas", "Antibióticos", "Anti-inflamatórios", "Psicofármacos", 
-                "Urgência e Emergência", "Sistema Nervoso", "Farmacologia Clínica", 
-                "Resumos Visuais", "Tabelas de Revisão", "Mecanismos de Ação"
+                { label: "Abacavir — Antirretroviral", img: carouselImg1 },
+                { label: "Abiraterona — Anticancerígeno", img: carouselImg2 },
+                { label: "Acarbosa — Antidiabético", img: carouselImg3 },
+                { label: "Aceclofenac — Anti-inflamatório", img: carouselImg4 },
+                { label: "Acetazolamida — Diurético", img: carouselImg5 },
+                { label: "Ácido Ascórbico — Vitamina C", img: carouselImg6 },
               ].map((item, i) => (
                 <div key={i} className="snap-center shrink-0 w-[260px] flex flex-col gap-3">
                   <div className="aspect-[3/4] rounded-xl bg-gray-100 overflow-hidden relative shadow-sm border border-gray-200">
-                    <img src={carouselImg} alt={item} className="w-full h-full object-cover opacity-90" />
+                    <img src={item.img} alt={item.label} className="w-full h-full object-cover opacity-90" />
                   </div>
-                  <h3 className="font-bold text-sm text-center">{item}</h3>
+                  <h3 className="font-bold text-sm text-center">{item.label}</h3>
                 </div>
               ))}
             </div>
