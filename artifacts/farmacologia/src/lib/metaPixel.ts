@@ -1,17 +1,22 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// Meta Pixel — Implementação profissional para React SPA + Wouter
+// Meta Pixel — Integração SPA para React + Wouter
 // Pixel ID: 993672840078117
+//
+// O código base do pixel (init + PageView inicial) está no index.html.
+// Este módulo gerencia apenas:
+//   - PageView em trocas de rota SPA
+//   - InitiateCheckout nos botões de compra
+//   - Purchase automático por URL
+//   - Deduplicação de eventos
+//   - Listener global de checkout
 // ─────────────────────────────────────────────────────────────────────────────
 
 declare global {
   interface Window {
     fbq: (...args: unknown[]) => void;
     _fbq: unknown;
-    fbqLoaded?: boolean;
   }
 }
-
-const PIXEL_ID = "993672840078117";
 
 // ─── Deduplicação: impede múltiplos eventos iguais em menos de 2 segundos ────
 const eventTimestamps: Record<string, number> = {};
@@ -24,69 +29,16 @@ function isDuplicate(eventName: string): boolean {
   return false;
 }
 
-// ─── Carregamento dinâmico do script do Facebook Pixel ───────────────────────
-export function initPixel(): void {
-  // Proteção anti-duplicação: só carrega uma vez
-  if (window.fbqLoaded) return;
-  window.fbqLoaded = true;
-
-  // Inicializa o stub fbq antes do script carregar (padrão Meta)
-  if (typeof window.fbq !== "function") {
-    const fbq = function (...args: unknown[]) {
-      fbq.callMethod
-        ? fbq.callMethod(...args)
-        : fbq.queue.push(args);
-    } as unknown as {
-      (...args: unknown[]): void;
-      push: (...args: unknown[]) => void;
-      loaded: boolean;
-      version: string;
-      queue: unknown[][];
-      callMethod?: (...args: unknown[]) => void;
-    };
-
-    fbq.push = fbq;
-    fbq.loaded = true;
-    fbq.version = "2.0";
-    fbq.queue = [];
-
-    window.fbq = fbq;
-    if (!window._fbq) window._fbq = fbq;
-  }
-
-  // Carrega o script de forma assíncrona
-  const script = document.createElement("script");
-  script.async = true;
-  script.src = "https://connect.facebook.net/en_US/fbevents.js";
-  script.onerror = () => {
-    // Fallback silencioso: pixel bloqueado por adblocker
-    console.warn("[MetaPixel] Script bloqueado por extensão ou adblocker.");
-  };
-
-  const firstScript = document.getElementsByTagName("script")[0];
-  firstScript?.parentNode?.insertBefore(script, firstScript);
-
-  // Inicializa o pixel
-  window.fbq("init", PIXEL_ID);
-
-  // Dispara PageView no carregamento inicial
-  trackPageView();
-
-  // Listener global: detecta automaticamente cliques em links de checkout
-  // (URLs contendo: checkout, pay, cakto)
-  document.addEventListener("click", handleGlobalCheckoutClick, true);
-}
-
-// ─── PageView — dispara no carregamento e a cada troca de rota SPA ───────────
+// ─── PageView — dispara a cada troca de rota SPA ──────────────────────────────
 export function trackPageView(): void {
-  if (!window.fbq) return;
+  if (typeof window.fbq !== "function") return;
   if (isDuplicate("PageView")) return;
   window.fbq("track", "PageView");
 }
 
-// ─── InitiateCheckout — dispara quando o usuário clica em comprar ─────────────
+// ─── InitiateCheckout — dispara no clique em botão de compra ──────────────────
 export function trackInitiateCheckout(): void {
-  if (!window.fbq) return;
+  if (typeof window.fbq !== "function") return;
   if (isDuplicate("InitiateCheckout")) return;
   window.fbq("track", "InitiateCheckout", {
     content_category: "Farmacologia em Mapas Mentais",
@@ -96,7 +48,7 @@ export function trackInitiateCheckout(): void {
 
 // ─── Purchase — dispara quando URL indica conclusão de compra ─────────────────
 export function trackPurchase(value?: number): void {
-  if (!window.fbq) return;
+  if (typeof window.fbq !== "function") return;
   if (isDuplicate("Purchase")) return;
   window.fbq("track", "Purchase", {
     value: value ?? 0,
@@ -106,14 +58,12 @@ export function trackPurchase(value?: number): void {
 }
 
 // ─── Listener global de checkout ──────────────────────────────────────────────
-// Detecta automaticamente cliques em qualquer link/botão de checkout
+// Detecta automaticamente cliques em qualquer link contendo: pay, cakto, checkout
 const CHECKOUT_URL_PATTERN = /checkout|pay|cakto/i;
+let checkoutListenerAdded = false;
 
 function handleGlobalCheckoutClick(event: MouseEvent): void {
-  const target = event.target as HTMLElement;
-
-  // Sobe na árvore DOM procurando um <a> com href de checkout
-  const anchor = target.closest("a");
+  const anchor = (event.target as HTMLElement).closest("a");
   if (anchor?.href && CHECKOUT_URL_PATTERN.test(anchor.href)) {
     trackInitiateCheckout();
   }
@@ -121,7 +71,12 @@ function handleGlobalCheckoutClick(event: MouseEvent): void {
 
 // ─── Rastreamento de rota SPA para Wouter ─────────────────────────────────────
 // Wouter usa history.pushState/replaceState — monkeypatch para detectar mudanças
+let spaTrackingSetup = false;
+
 export function setupSpaTracking(): void {
+  if (spaTrackingSetup) return;
+  spaTrackingSetup = true;
+
   const originalPushState = history.pushState.bind(history);
   const originalReplaceState = history.replaceState.bind(history);
 
@@ -139,7 +94,6 @@ export function setupSpaTracking(): void {
 }
 
 function onRouteChange(): void {
-  // Pequeno delay para garantir que o DOM atualizou
   setTimeout(() => {
     trackPageView();
     checkPurchaseUrl();
@@ -155,22 +109,21 @@ export function checkPurchaseUrl(): void {
   }
 }
 
+// ─── Inicialização dos listeners (sem re-carregar o pixel do index.html) ──────
+export function initPixel(): void {
+  if (checkoutListenerAdded) return;
+  checkoutListenerAdded = true;
+  document.addEventListener("click", handleGlobalCheckoutClick, true);
+}
+
 // ─────────────────────────────────────────────────────────────────────────────
 // COMO ADICIONAR NOVOS EVENTOS:
-//
-//   import { trackInitiateCheckout, trackPurchase } from "@/lib/metaPixel";
-//
-//   // Exemplo: evento customizado
+//   import { trackInitiateCheckout } from "@/lib/metaPixel";
 //   window.fbq("trackCustom", "NomeDoEvento", { chave: "valor" });
 //
-// COMO TESTAR NO META EVENTS MANAGER:
-//   1. Acesse: https://business.facebook.com/events_manager
-//   2. Selecione o Pixel 993672840078117
-//   3. Clique em "Testar Eventos" e insira a URL da página
-//   4. Navegue pela página e verifique os eventos em tempo real
-//
-// VALIDAR InitiateCheckout e Purchase:
-//   - Instale a extensão "Meta Pixel Helper" no Chrome
-//   - Clique nos botões de compra → deve aparecer "InitiateCheckout"
-//   - Acesse uma URL com "obrigado" ou "success" → deve aparecer "Purchase"
+// COMO TESTAR:
+//   1. Instale "Meta Pixel Helper" no Chrome
+//   2. Acesse a URL publicada (não o preview do Replit)
+//   3. O Helper deve mostrar: Pixel ID 993672840078117 + evento PageView
+//   4. Clique num botão de compra → deve aparecer InitiateCheckout
 // ─────────────────────────────────────────────────────────────────────────────
