@@ -498,7 +498,7 @@ function LandingPage() {
               ))}
             </div>
 
-            <CTAButton>GARANTIR MEU ACESSO AGORA</CTAButton>
+            <CTAButton onClick={scrollToOfertas}>GARANTIR MEU ACESSO AGORA</CTAButton>
           </FadeIn>
         </section>
 
