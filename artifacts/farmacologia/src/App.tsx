@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -51,6 +51,48 @@ const FadeIn = ({ children, delay = 0, className = "" }: { children: React.React
 const scrollToOfertas = () => {
   document.getElementById("ofertas")?.scrollIntoView({ behavior: "smooth" });
 };
+
+// ─── Countdown Timer — urgência na seção de ofertas ───────────────────────────
+function getOrCreateExpiry(): number {
+  try {
+    const stored = sessionStorage.getItem("oferta_expira");
+    if (stored) return Number(stored);
+    const expira = Date.now() + 23 * 3600 * 1000 + 47 * 60 * 1000 + 12 * 1000;
+    sessionStorage.setItem("oferta_expira", String(expira));
+    return expira;
+  } catch {
+    return Date.now() + 23 * 3600 * 1000 + 47 * 60 * 1000 + 12 * 1000;
+  }
+}
+
+function CountdownTimer() {
+  const [secs, setSecs] = useState(() =>
+    Math.max(0, Math.floor((getOrCreateExpiry() - Date.now()) / 1000))
+  );
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setSecs(Math.max(0, Math.floor((getOrCreateExpiry() - Date.now()) / 1000)));
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
+
+  const h = String(Math.floor(secs / 3600)).padStart(2, "0");
+  const m = String(Math.floor((secs % 3600) / 60)).padStart(2, "0");
+  const s = String(secs % 60).padStart(2, "0");
+
+  return (
+    <div className="flex items-center justify-center gap-1.5 mb-2">
+      <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Oferta expira em</span>
+      {[h, m, s].map((unit, i) => (
+        <span key={i} className="flex items-center gap-1">
+          <span className="bg-destructive text-white font-black text-sm px-2 py-0.5 rounded-md tabular-nums min-w-[28px] text-center">{unit}</span>
+          {i < 2 && <span className="text-destructive font-black text-sm">:</span>}
+        </span>
+      ))}
+    </div>
+  );
+}
 
 const CTAButton = ({ children, className = "", onClick }: { children: React.ReactNode, className?: string, onClick?: () => void }) => (
   <Button 
@@ -321,6 +363,7 @@ function LandingPage() {
         <section id="ofertas" className="px-6 py-14 bg-background">
           <FadeIn>
             <div className="text-center mb-10">
+              <CountdownTimer />
               <h2 className="font-display text-5xl font-black leading-none uppercase mb-3">
                 ESCOLHA O MELHOR <br/>
                 <span className="text-primary">PLANO PARA VOCÊ</span>
