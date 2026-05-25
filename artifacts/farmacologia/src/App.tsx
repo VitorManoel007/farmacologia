@@ -29,6 +29,10 @@ import comboEssencialImg from "@assets/magnific__quero-que-pague-o-elemento-prin
 import whatsappLidia from "@assets/IMG_1883-ezremove_1779676478637.png";
 import whatsappRafaela from "@assets/IMG_1881-ezremove_1779676478637.png";
 import whatsappAlicia from "@assets/IMG_1885-ezremove_1779676478637.png";
+import painImgMedicamentos from "@assets/5-Photoroom_1779712544475.png";
+import painImgCansado from "@assets/2-Photoroom_1779712544476.png";
+import painImgEstresse from "@assets/3_-_Copia-Photoroom_1779712544476.png";
+import painImgCerebro from "@assets/4-Photoroom_1779712544475.png";
 
 const queryClient = new QueryClient();
 
@@ -174,17 +178,17 @@ function LandingPage() {
 
             <div className="grid grid-cols-1 gap-3">
               {[
-                { emoji: "📄", pain: "PDFs gigantes sem fim" },
-                { emoji: "⏳", pain: "Revisão que leva horas" },
-                { emoji: "😰", pain: "Ansiedade na véspera da prova" },
-                { emoji: "🤯", pain: "Conteúdo demais pra decorar" },
-                { emoji: "💊", pain: "Nomes de fármacos impossíveis" },
+                { img: painImgMedicamentos, pain: "PDFs gigantes sem fim" },
+                { img: painImgCansado,      pain: "Revisão que leva horas" },
+                { img: painImgEstresse,     pain: "Ansiedade na véspera da prova" },
+                { img: painImgCerebro,      pain: "Conteúdo demais pra decorar" },
+                { img: painImgMedicamentos, pain: "Nomes de fármacos impossíveis" },
               ].map((item, i) => (
                 <div
                   key={i}
                   className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3"
                 >
-                  <span className="text-2xl shrink-0">{item.emoji}</span>
+                  <img src={item.img} alt="" className="w-10 h-10 shrink-0 object-contain" />
                   <span className="text-sm font-semibold text-white">{item.pain}</span>
                 </div>
               ))}
