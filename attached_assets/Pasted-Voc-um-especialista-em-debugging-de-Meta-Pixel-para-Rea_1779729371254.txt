@@ -1,0 +1,191 @@
+Você é um especialista em debugging de Meta Pixel para React SPA.
+
+NÃO quero uma nova implementação.
+NÃO quero refatoração completa.
+
+Quero apenas:
+IDENTIFICAR EXATAMENTE por que os eventos do Meta Pixel não estão disparando.
+
+CONTEXTO:
+
+* React
+* TypeScript
+* Wouter
+* SPA
+* Replit
+* Pixel ID: 993672840078117
+
+PROBLEMA:
+
+O Meta Pixel aparece instalado.
+Porém:
+
+* PageView não aparece
+* InitiateCheckout não aparece
+* Purchase não aparece
+
+OBJETIVO:
+Fazer um DEBUG COMPLETO e localizar exatamente o ponto que está quebrando.
+
+========================
+ETAPA 1 — VALIDAR FBQ
+=====================
+
+Verificar se:
+
+window.fbq
+
+está realmente disponível globalmente.
+
+Adicionar logs:
+
+console.log('fbq:', window.fbq)
+
+Validar:
+
+* undefined
+* function
+* timing de carregamento.
+
+========================
+ETAPA 2 — VALIDAR INIT
+======================
+
+Verificar se:
+
+initPixel()
+
+realmente executa.
+
+Adicionar:
+
+console.log('Pixel initialized')
+
+Garantir:
+
+* executa apenas uma vez
+* App.tsx realmente chama initPixel().
+
+========================
+ETAPA 3 — VALIDAR PAGEVIEW
+==========================
+
+Adicionar logs dentro de:
+
+trackPageView()
+
+Exemplo:
+
+console.log('PageView fired')
+
+Verificar:
+
+* se a função executa
+* se window.fbq existe
+* se o track realmente dispara.
+
+========================
+ETAPA 4 — VALIDAR SPA ROUTING
+=============================
+
+Verificar se:
+
+useEffect(() => {
+trackPageView()
+}, [location])
+
+está realmente funcionando com Wouter.
+
+Adicionar logs mostrando:
+
+* troca de rota
+* pathname atual.
+
+========================
+ETAPA 5 — VALIDAR INITIATECHECKOUT
+==================================
+
+Adicionar logs nos botões:
+
+console.log('Checkout click detected')
+
+Verificar:
+
+* se o onClick executa
+* se trackInitiateCheckout() executa
+* se fbq dispara corretamente.
+
+Validar se foi usado corretamente:
+
+onClick={() => trackInitiateCheckout()}
+
+E NÃO:
+
+onClick={trackInitiateCheckout()}
+
+========================
+ETAPA 6 — VALIDAR PURCHASE
+==========================
+
+Adicionar logs:
+
+console.log('Purchase fired')
+
+Validar:
+
+* URL atual
+* condição de disparo
+* value
+* currency.
+
+========================
+ETAPA 7 — META PIXEL HELPER
+===========================
+
+Verificar:
+
+* se existe erro no Pixel Helper
+* duplicate pixel
+* malformed events
+* blocked event
+* fbq undefined.
+
+========================
+ETAPA 8 — TESTE MANUAL
+======================
+
+Executar no console:
+
+fbq('track', 'PageView')
+
+Verificar:
+
+* se o evento aparece
+* se ocorre erro.
+
+========================
+OBJETIVO FINAL
+==============
+
+Encontrar exatamente:
+
+* qual função não executa
+* qual evento não dispara
+* qual parte do React SPA está quebrando
+* se o problema é:
+
+  * timing
+  * fbq undefined
+  * onClick
+  * SPA routing
+  * Meta initialization
+  * StrictMode
+  * Wouter.
+
+NÃO criar uma nova arquitetura.
+
+Apenas:
+
+* identificar o erro real
+* corrigir o problema exato
+* manter tudo simples e estável.

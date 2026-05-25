@@ -8,19 +8,16 @@ declare global {
 }
 
 export function trackPageView(): void {
-  console.log("MetaPixel: PageView fired");
   if (typeof window.fbq === "undefined") return;
   window.fbq("track", "PageView");
 }
 
 export function trackInitiateCheckout(): void {
-  console.log("MetaPixel: InitiateCheckout fired");
   if (typeof window.fbq === "undefined") return;
   window.fbq("track", "InitiateCheckout");
 }
 
 export function trackPurchase(value: number = 0): void {
-  console.log("MetaPixel: Purchase fired", value);
   if (typeof window.fbq === "undefined") return;
   window.fbq("track", "Purchase", { currency: "BRL", value });
 }
