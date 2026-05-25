@@ -49,7 +49,6 @@ const FadeIn = ({ children, delay = 0, className = "" }: { children: React.React
 );
 
 const scrollToOfertas = () => {
-  trackInitiateCheckout();
   document.getElementById("ofertas")?.scrollIntoView({ behavior: "smooth" });
 };
 

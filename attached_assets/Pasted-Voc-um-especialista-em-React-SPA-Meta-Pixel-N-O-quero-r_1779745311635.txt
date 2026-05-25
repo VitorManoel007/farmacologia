@@ -1,0 +1,171 @@
+Você é um especialista em React SPA + Meta Pixel.
+
+NÃO quero remover o pixel.
+NÃO quero reinstalar o pixel.
+NÃO quero refatorar o projeto.
+
+Quero apenas:
+CORRIGIR A DUPLICAÇÃO DOS EVENTOS InitiateCheckout.
+
+CONTEXTO:
+
+* React
+* TypeScript
+* Wouter
+* SPA
+* Replit
+* Meta Pixel já funcionando
+* Pixel ID já instalado corretamente
+
+PROBLEMA:
+
+Atualmente vários botões da landing page estão disparando:
+InitiateCheckout
+
+Porém:
+muitos desses botões são apenas âncoras internas da página.
+
+Exemplo:
+
+* "QUERO REVISAR MAIS RÁPIDO"
+* "QUERO MEMORIZAR MAIS RÁPIDO"
+* "QUERO ACESSO IMEDIATO"
+
+Esses botões:
+
+* NÃO abrem checkout
+* NÃO levam para pagamento
+* apenas fazem scroll para a seção de planos.
+
+RESULTADO:
+o pixel dispara múltiplos InitiateCheckout falsos.
+
+========================
+OBJETIVO
+========
+
+Deixar o tracking PROFISSIONAL e LIMPO.
+
+O evento:
+InitiateCheckout
+
+deve disparar SOMENTE quando o usuário clicar em:
+
+✅ LIBERAR MEU ACESSO
+✅ LIBERAR MEU ACESSO COMPLETO
+
+Porque apenas esses botões:
+
+* levam ao checkout real
+* iniciam intenção de compra real.
+
+========================
+O QUE FAZER
+===========
+
+1. IDENTIFICAR todos os botões da página.
+
+Separar:
+
+* botões âncora
+* botões checkout real.
+
+========================
+2. REMOVER trackInitiateCheckout()
+==================================
+
+De TODOS os botões âncora.
+
+Os botões internos devem:
+
+* apenas navegar
+* apenas fazer scroll suave.
+
+SEM:
+
+* fbq
+* track
+* tracking
+* listeners.
+
+========================
+3. MANTER InitiateCheckout APENAS
+=================================
+
+Nos botões:
+
+* LIBERAR MEU ACESSO
+* LIBERAR MEU ACESSO COMPLETO
+
+Usar:
+
+onClick={() => trackInitiateCheckout()}
+
+========================
+4. REMOVER TRACKING AUTOMÁTICO
+==============================
+
+Remover:
+
+* detecção automática de links
+* tracking por URL
+* listeners globais
+* MutationObserver
+* addEventListener global
+* qualquer sistema automático de checkout tracking.
+
+========================
+5. PAGEVIEW
+===========
+
+Garantir:
+
+fbq('track', 'PageView')
+
+E NÃO:
+
+fbq('trackCustom', 'PageView')
+
+========================
+6. INITIATECHECKOUT
+===================
+
+Garantir:
+
+fbq('track', 'InitiateCheckout')
+
+E NÃO:
+
+fbq('trackCustom', 'InitiateCheckout')
+
+========================
+7. RESULTADO FINAL
+==================
+
+Ao testar:
+
+* scroll interno NÃO dispara checkout
+* botões âncora NÃO disparam checkout
+* apenas checkout real dispara evento.
+
+No Meta Events Manager deve aparecer:
+
+✅ 1 PageView
+✅ 1 InitiateCheckout por clique real
+✅ sem duplicação
+✅ sem eventos fantasmas
+✅ sem SubscribedButtonClick.
+
+========================
+IMPORTANTE
+==========
+
+NÃO remover o pixel.
+NÃO criar nova arquitetura.
+NÃO mudar a landing page.
+
+Apenas:
+
+* limpar os eventos
+* corrigir os disparos
+* manter o tracking profissional.
