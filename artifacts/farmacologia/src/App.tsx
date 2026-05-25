@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -666,17 +666,28 @@ function NotFound() {
 }
 
 // ─── Hook: SPA tracking simples com Wouter ───────────────────────────────────
-// Dispara PageView a cada troca de rota. Verifica Purchase por URL.
+// PageView inicial já disparado pelo index.html de forma síncrona.
+// Este hook dispara PageView apenas em navegações subsequentes (SPA).
+// Purchase é verificado em toda rota, incluindo carregamento direto em /obrigado.
 function usePixelTracking() {
   const [location] = useLocation();
+  const isFirstRender = useRef(true);
 
   useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      if (/obrigado|success|purchase/i.test(location)) {
+        const params = new URLSearchParams(window.location.search);
+        const raw = params.get("value") ?? params.get("valor") ?? "0";
+        trackPurchase(parseFloat(raw) || 0);
+      }
+      return;
+    }
     trackPageView();
     if (/obrigado|success|purchase/i.test(location)) {
       const params = new URLSearchParams(window.location.search);
       const raw = params.get("value") ?? params.get("valor") ?? "0";
-      const value = parseFloat(raw) || 0;
-      trackPurchase(value);
+      trackPurchase(parseFloat(raw) || 0);
     }
   }, [location]);
 }
