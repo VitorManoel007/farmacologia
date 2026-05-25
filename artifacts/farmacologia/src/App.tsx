@@ -390,8 +390,8 @@ function LandingPage() {
           
           <FadeIn className="relative z-10">
             <p className="font-display text-4xl sm:text-5xl font-black uppercase leading-[0.95] mb-8">
-              ⏰ Resolva isso hoje —<br/>
-              <span className="underline decoration-white decoration-4 underline-offset-4">antes da próxima prova</span>
+              Pare de sofrer com<br/>
+              <span className="underline decoration-white decoration-4 underline-offset-4">farmacologia hoje.</span>
             </p>
 
             <CTAButton onClick={scrollToOfertas} className="!bg-[#0D0F1C] !text-primary hover:!bg-black shadow-[0_4px_14px_rgba(0,0,0,0.3)] border-2 border-[#0D0F1C]">
