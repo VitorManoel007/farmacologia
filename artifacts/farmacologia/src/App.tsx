@@ -3,7 +3,7 @@ import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { initPixel, setupSpaTracking, checkPurchaseUrl, trackInitiateCheckout } from "@/lib/metaPixel";
+import { initPixel, trackInitiateCheckout } from "@/lib/metaPixel";
 import { motion } from "framer-motion";
 import { Check, Lock, Mail, CreditCard, Star, AlertTriangle, Zap, Clock, Target, Brain, Shield } from "lucide-react";
 import {
@@ -640,15 +640,12 @@ function NotFound() {
   );
 }
 
-// ─── Hook: rastreia mudanças de rota e evento Purchase automático por URL ─────
+// ─── Hook: inicializa o pixel uma única vez no topo da árvore ────────────────
+// initPixel() cuida de: carregamento dinâmico, init, PageView, SPA tracking,
+// listener global de checkout e verificação de Purchase por URL.
 function usePixelTracking() {
   useEffect(() => {
-    // Inicializa o pixel apenas uma vez (anti-duplicação interna no initPixel)
     initPixel();
-    // Configura rastreamento de rotas SPA via history.pushState/replaceState
-    setupSpaTracking();
-    // Verifica se a URL atual indica uma compra concluída
-    checkPurchaseUrl();
   }, []);
 }
 

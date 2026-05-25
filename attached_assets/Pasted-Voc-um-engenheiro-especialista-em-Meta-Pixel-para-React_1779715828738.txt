@@ -1,0 +1,118 @@
+Você é um engenheiro especialista em Meta Pixel para React SPA.
+
+Preciso instalar o Meta Pixel profissionalmente em um projeto React + Wouter + TypeScript hospedado no Replit.
+
+PIXEL_ID:
+993672840078117
+
+OBJETIVO:
+Configurar os eventos principais para campanhas de conversão no Meta Ads.
+
+EVENTOS PRINCIPAIS:
+
+* PageView
+* InitiateCheckout
+* Purchase
+
+STACK:
+
+* React
+* TypeScript
+* Wouter Router
+* SPA
+
+REGRAS:
+
+* NÃO duplicar eventos
+* Compatível com SPA
+* Código leve
+* Mobile first
+* Funcionar após deploy
+* Estrutura profissional
+
+IMPLEMENTAÇÃO:
+
+1. Criar arquivo:
+   src/lib/metaPixel.ts
+
+2. Implementar carregamento profissional do Meta Pixel:
+
+* load dinâmico
+* fallback
+* tipagem TypeScript
+* proteção anti-duplicação
+
+3. Criar funções:
+
+* initPixel()
+* trackPageView()
+* trackInitiateCheckout()
+* trackPurchase()
+
+4. PAGE VIEW:
+
+* disparar automaticamente:
+
+  * carregamento inicial
+  * toda troca de rota SPA
+
+5. INITIATE CHECKOUT:
+   Disparar automaticamente nos botões:
+
+* GARANTIR COMBO ESSENCIAL
+* GARANTIR COMBO COMPLETO
+
+Também disparar em:
+
+* qualquer link contendo:
+
+  * checkout
+  * pay
+  * cakto
+
+6. PURCHASE:
+   Disparar somente quando:
+
+* URL conter:
+
+  * obrigado
+  * success
+  * purchase
+
+7. Implementar rastreamento SPA para Wouter:
+
+* detectar troca de rota sem reload
+
+8. Implementar deduplicação:
+
+* impedir múltiplos eventos iguais em menos de 2 segundos
+
+9. Adicionar listener global:
+
+* detectar automaticamente botões de checkout
+
+10. Inserir inicialização global no App.tsx:
+
+* iniciar pixel apenas uma vez
+* rastrear mudanças de rota
+
+11. Criar hook:
+    usePixelTracking()
+
+12. Adicionar comentários explicando:
+
+* SPA tracking
+* deduplicação
+* checkout tracking
+
+13. Garantir:
+
+* compatibilidade React Strict Mode
+* funcionamento em produção
+* funcionamento após hospedagem
+
+14. Após finalizar:
+
+* mostrar onde adicionar novos eventos
+* mostrar como testar no Meta Events Manager
+* mostrar como validar o InitiateCheckout e Purchase.
