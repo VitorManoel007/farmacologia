@@ -1,0 +1,133 @@
+Configure corretamente o Meta Pixel na landing page utilizando o Pixel ID:
+
+993672840078117
+
+OBJETIVO:
+Implementar o pixel da forma mais leve, rápida e otimizada possível para campanhas de conversão.
+
+IMPORTANTE:
+NÃO usar scripts desnecessários.
+NÃO adicionar bibliotecas pesadas.
+NÃO duplicar eventos.
+
+A configuração deve ser:
+
+* simples
+* econômica
+* leve
+* rápida
+* compatível com mobile.
+
+========================
+PIXEL PRINCIPAL
+===============
+
+Adicionar o Meta Pixel oficial no <head> da página utilizando o ID:
+
+993672840078117
+
+Garantir:
+
+* carregamento assíncrono
+* implementação limpa
+* funcionamento correto no Meta Events Manager.
+
+========================
+EVENTO 1 — PAGEVIEW
+===================
+
+Disparar automaticamente:
+
+* quando a página carregar.
+
+Evento:
+PageView
+
+Objetivo:
+
+* rastrear visitas
+* alimentar públicos
+* otimizar campanhas.
+
+========================
+EVENTO 2 — INITIATECHECKOUT
+===========================
+
+Disparar o evento:
+
+InitiateCheckout
+
+Quando o usuário clicar em qualquer botão principal de compra.
+
+Aplicar nos botões:
+
+* QUERO REVISAR MAIS RÁPIDO
+* LIBERAR MEU ACESSO
+* LIBERAR MEU ACESSO COMPLETO
+* GARANTIR MEU ACESSO AGORA
+* QUERO MUDAR MINHA FORMA DE ESTUDAR
+
+IMPORTANTE:
+Evitar eventos duplicados.
+
+========================
+EVENTO 3 — PURCHASE
+===================
+
+Disparar o evento:
+
+Purchase
+
+Apenas na página de obrigado/compra aprovada.
+
+Adicionar:
+
+* value
+* currency: BRL
+
+Valores:
+
+Plano Essencial:
+10.00
+
+Plano Completo:
+25.00
+
+========================
+IMPLEMENTAÇÃO
+=============
+
+Usar:
+
+* JavaScript puro
+* Meta Pixel oficial
+* código limpo.
+
+Aplicar:
+
+* async/defer quando possível
+* scripts leves
+* carregamento otimizado.
+
+========================
+VALIDAÇÃO
+=========
+
+Garantir que:
+
+* os eventos apareçam corretamente no Meta Events Manager
+* não exista duplicação
+* os eventos sejam disparados apenas uma vez
+* funcione corretamente no mobile.
+
+========================
+OBJETIVO FINAL
+==============
+
+Ter uma configuração:
+
+* leve
+* rápida
+* econômica
+* confiável
+* pronta para campanhas de conversão no Meta Ads.

@@ -3,7 +3,7 @@ import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { initPixel, setupSpaTracking, checkPurchaseUrl } from "@/lib/metaPixel";
+import { initPixel, setupSpaTracking, checkPurchaseUrl, trackInitiateCheckout } from "@/lib/metaPixel";
 import { motion } from "framer-motion";
 import { Check, Lock, Mail, CreditCard, Star, AlertTriangle, Zap, Clock, Target, Brain, Shield } from "lucide-react";
 import {
@@ -45,6 +45,7 @@ const FadeIn = ({ children, delay = 0, className = "" }: { children: React.React
 );
 
 const scrollToOfertas = () => {
+  trackInitiateCheckout();
   document.getElementById("ofertas")?.scrollIntoView({ behavior: "smooth" });
 };
 
