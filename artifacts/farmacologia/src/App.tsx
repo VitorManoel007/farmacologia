@@ -389,14 +389,6 @@ function LandingPage() {
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
           
           <FadeIn className="relative z-10">
-            <h2 className="font-display text-4xl sm:text-5xl font-black leading-[0.95] uppercase mb-6">
-              VOCÊ NÃO ESTÁ CANSADO DE ESTUDAR… <br/>
-              VOCÊ ESTÁ CANSADO DE <br/>
-              <span className="underline decoration-white decoration-4 underline-offset-4">ESQUECER TUDO</span>
-            </h2>
-
-            <p className="text-sm font-bold opacity-90 mb-6">O problema não é você. É a forma de estudar.</p>
-
             <div className="inline-block bg-white/15 border border-white/30 rounded-xl px-5 py-3 mb-8 backdrop-blur-sm">
               <p className="text-base font-black uppercase tracking-wide">
                 ⏰ Resolva isso hoje — <span className="underline decoration-2 underline-offset-2">antes da próxima prova</span>
