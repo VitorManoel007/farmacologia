@@ -399,110 +399,96 @@ function LandingPage() {
               </p>
             </div>
 
-            <div className="flex flex-col gap-6">
-              {/* CARD 1 — COMBO ESSENCIAL */}
+            <div className="flex flex-col gap-5">
+              {/* CARD 1 — ESSENCIAL */}
               <div className="bg-card border border-border rounded-2xl p-6">
-                <div className="mb-4 text-center">
+                <div className="mb-5">
                   <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Plano</span>
-                  <h3 className="font-display text-4xl font-black uppercase leading-none text-white">ESSENCIAL</h3>
+                  <h3 className="font-display text-3xl font-black uppercase leading-none text-white mt-0.5">ESSENCIAL</h3>
                 </div>
 
-                {/* Imagem do produto */}
-                <div className="flex justify-center mb-4">
-                  <img src={comboEssencialImg} alt="Kit Essencial de Farmacologia" className="w-full max-w-xs object-contain drop-shadow-xl" loading="lazy" decoding="async" />
-                </div>
-
-                {/* Benefícios */}
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-2.5 mb-6">
                   {[
-                    "+110 mapas mentais de medicamentos completos",
-                    "Antirretrovirais, Anticancerígenos e Antidiabéticos",
-                    "Mecanismo de ação, dose e contraindicações",
-                    "Revise qualquer medicamento em menos de 2 minutos",
-                    "PDF otimizado para celular e tablet",
-                    "Link no e-mail logo após a confirmação"
+                    "+110 mapas mentais farmacológicos",
+                    "Revisão rápida antes da prova",
+                    "PDFs organizados e simples",
+                    "Acesso imediato no celular",
+                    "Atualizações inclusas",
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-[15px] font-medium text-white">
-                      <div className="w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
-                        <Check className="w-2.5 h-2.5 text-primary" strokeWidth={4} />
-                      </div>
+                    <li key={i} className="flex items-center gap-2.5 text-[14px] font-medium text-white/90">
+                      <Check className="w-4 h-4 text-primary shrink-0" strokeWidth={3} />
                       {item}
                     </li>
                   ))}
                 </ul>
 
-                {/* Preço abaixo dos benefícios em verde */}
-                <div className="border-t border-border pt-5 mb-6 text-center">
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">De <span className="line-through text-gray-500">R$ 47,00</span> por apenas</p>
-                  <div className="flex items-end justify-center gap-1">
-                    <span className="text-xl font-bold text-primary">R$</span>
-                    <span className="font-display text-6xl font-black leading-none text-primary">10,00</span>
+                <div className="border-t border-border pt-5 mb-5">
+                  <p className="text-xs text-muted-foreground mb-1">
+                    De <span className="line-through">R$47</span> por apenas
+                  </p>
+                  <div className="flex items-end gap-1">
+                    <span className="text-lg font-bold text-primary">R$</span>
+                    <span className="font-display text-5xl font-black leading-none text-primary">10</span>
+                    <span className="text-lg font-bold text-primary mb-1">,00</span>
                   </div>
-                  <p className="text-xs font-medium text-muted-foreground mt-1">Pagamento único • Acesso imediato • Atualizações inclusas</p>
                 </div>
 
                 <a href="https://pay.cakto.com.br/3asoehq_887420" target="_blank" rel="noopener noreferrer" className="block">
-                  <Button className="w-full bg-secondary hover:bg-secondary/80 text-white font-bold min-h-14 h-auto py-4 rounded-xl uppercase tracking-wide border border-border whitespace-normal leading-tight text-center">
+                  <Button className="w-full bg-secondary hover:bg-secondary/80 text-white font-black min-h-14 h-auto py-4 rounded-xl uppercase tracking-wide border border-border text-sm">
                     LIBERAR MEU ACESSO
                   </Button>
                 </a>
+                <p className="text-center text-[11px] text-muted-foreground mt-2.5">
+                  Acesso imediato após a compra · Pagamento único · Funciona no celular e tablet
+                </p>
               </div>
 
-              {/* CARD 2 — COMBO COMPLETO */}
-              <div className="bg-card border-2 border-primary rounded-2xl p-6 relative shadow-[0_0_30px_rgba(182,255,59,0.25)] mt-4">
-                {/* Badge topo */}
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
-                  <div className="bg-destructive text-white text-[11px] font-black uppercase tracking-widest px-4 py-1.5 rounded-full whitespace-nowrap flex items-center gap-1.5 shadow-md">
+              {/* CARD 2 — COMPLETO */}
+              <div className="bg-card border-2 border-primary rounded-2xl p-6 relative shadow-[0_0_24px_rgba(182,255,59,0.15)]">
+                <div className="absolute -top-3.5 left-1/2 -translate-x-1/2">
+                  <span className="bg-destructive text-white text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full whitespace-nowrap">
                     🔥 MAIS VENDIDO
-                  </div>
+                  </span>
                 </div>
 
-                {/* Título destaque */}
-                <div className="mt-4 mb-4 text-center">
-                  <span className="text-[10px] font-black uppercase tracking-widest text-primary/70">Plano</span>
-                  <h3 className="font-display text-4xl font-black uppercase leading-none text-primary">COMPLETO</h3>
+                <div className="mb-5 mt-2">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-primary/60">Plano</span>
+                  <h3 className="font-display text-3xl font-black uppercase leading-none text-primary mt-0.5">COMPLETO</h3>
                 </div>
 
-                {/* Imagem do kit */}
-                <div className="flex justify-center mb-4">
-                  <img src={comboCompletoImg} alt="Kit Completo de Farmacologia" className="w-full max-w-xs object-contain drop-shadow-xl" loading="lazy" decoding="async" />
-                </div>
-
-                {/* Benefícios */}
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-2.5 mb-6">
                   {[
-                    "Tudo do Combo Essencial",
-                    "Guia de Antimicrobianos",
-                    "Psicofármacos",
-                    "Urgência e Emergência",
-                    "Resumos Clínicos",
-                    "Tabelas rápidas",
-                    "Biblioteca ampliada",
-                    "Materiais extras",
-                    "Conteúdo avançado"
+                    { text: "Tudo do plano essencial", highlight: true },
+                    { text: "Antimicrobianos" },
+                    { text: "Psicofármacos" },
+                    { text: "Urgência e emergência" },
+                    { text: "Resumos clínicos" },
+                    { text: "Biblioteca ampliada" },
                   ].map((item, i) => (
-                    <li key={i} className="flex items-center gap-2.5 text-[15px] font-medium text-white">
-                      <div className="w-4 h-4 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
-                        <Check className="w-2.5 h-2.5 text-primary" strokeWidth={4} />
-                      </div>
-                      <span className={i === 0 ? "font-bold text-primary" : ""}>{item}</span>
+                    <li key={i} className={`flex items-center gap-2.5 text-[14px] font-medium ${item.highlight ? "text-primary font-bold" : "text-white/90"}`}>
+                      <Check className="w-4 h-4 text-primary shrink-0" strokeWidth={3} />
+                      {item.text}
                     </li>
                   ))}
                 </ul>
 
-                {/* Preço após benefícios */}
-                <div className="border-t border-border pt-5 mb-6 text-center">
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">De <span className="line-through text-gray-500">R$ 97,00</span> por apenas</p>
-                  <div className="flex items-end justify-center gap-1">
-                    <span className="text-xl font-bold text-primary">R$</span>
-                    <span className="font-display text-6xl font-black leading-none text-primary">25,00</span>
+                <div className="border-t border-border pt-5 mb-5">
+                  <p className="text-xs text-muted-foreground mb-1">
+                    De <span className="line-through">R$97</span> por apenas
+                  </p>
+                  <div className="flex items-end gap-1">
+                    <span className="text-lg font-bold text-primary">R$</span>
+                    <span className="font-display text-5xl font-black leading-none text-primary">25</span>
+                    <span className="text-lg font-bold text-primary mb-1">,00</span>
                   </div>
-                  <p className="text-xs font-medium text-muted-foreground mt-1">Pagamento único • Acesso imediato • Atualizações inclusas</p>
                 </div>
 
                 <a href="https://pay.cakto.com.br/ers4bn6_887486" target="_blank" rel="noopener noreferrer" className="block">
                   <CTAButton>LIBERAR MEU ACESSO COMPLETO</CTAButton>
                 </a>
+                <p className="text-center text-[11px] text-muted-foreground mt-2.5">
+                  Acesso imediato após a compra · Pagamento único · Funciona no celular e tablet
+                </p>
               </div>
             </div>
           </FadeIn>

@@ -1,0 +1,166 @@
+Otimize o bloco de ofertas/pricing da landing page para aumentar conversão e velocidade de decisão.
+
+OBJETIVO:
+Deixar a área de compra:
+
+* mais limpa
+* mais rápida
+* mais escaneável
+* mais impulsiva
+* menos poluída visualmente.
+
+IMPORTANTE:
+REMOVER todos os mockups da seção de preços/ofertas.
+
+NÃO usar:
+
+* caixas 3D
+* imagens do produto
+* mockups grandes
+* elementos visuais pesados.
+
+O visitante já viu o material anteriormente na página.
+Agora o foco deve ser:
+
+* decisão rápida
+* clareza
+* facilidade de compra.
+
+========================
+ESTRUTURA VISUAL
+================
+
+A seção deve parecer:
+
+* limpa
+* moderna
+* leve
+* organizada
+* fácil de entender.
+
+Dar destaque para:
+
+* nome do plano
+* benefícios
+* preço
+* CTA.
+
+Reduzir:
+
+* distrações
+* excesso visual
+* elementos desnecessários.
+
+========================
+LAYOUT DOS CARDS
+================
+
+Criar cards simples e modernos.
+
+Visual:
+
+* dark suave
+* glow verde discreto
+* contraste limpo
+* bastante espaçamento.
+
+NÃO exagerar:
+
+* sombras
+* efeitos
+* bordas pesadas.
+
+========================
+PLANO ESSENCIAL
+===============
+
+Mostrar apenas:
+
+✔ +110 mapas mentais farmacológicos
+
+✔ Revisão rápida antes da prova
+
+✔ PDFs organizados e simples
+
+✔ Acesso imediato no celular
+
+✔ Atualizações inclusas
+
+Preço destacado:
+
+De R$47 por apenas R$10
+
+Botão:
+
+“LIBERAR MEU ACESSO”
+
+========================
+PLANO COMPLETO
+==============
+
+Mostrar apenas:
+
+✔ Tudo do plano essencial
+
+✔ Antimicrobianos
+
+✔ Psicofármacos
+
+✔ Urgência e emergência
+
+✔ Resumos clínicos
+
+✔ Biblioteca ampliada
+
+Preço destacado:
+
+De R$97 por apenas R$25
+
+Botão:
+
+“LIBERAR MEU ACESSO COMPLETO”
+
+========================
+HIERARQUIA VISUAL
+=================
+
+Destacar:
+
+* preço
+* CTA
+* benefícios rápidos.
+
+Reduzir:
+
+* textos longos
+* explicações excessivas.
+
+O usuário deve bater o olho e entender:
+
+* o que recebe
+* quanto custa
+* como comprar.
+
+========================
+MICROCOPYS
+==========
+
+Adicionar abaixo dos CTAs:
+
+* Acesso imediato após a compra
+* Pagamento único
+* Funciona no celular e tablet
+
+========================
+OBJETIVO FINAL
+==============
+
+A seção de ofertas deve fazer o visitante pensar:
+
+“é barato, útil e eu quero isso agora.”
+
+SEM:
+
+* excesso de design
+* poluição visual
+* cara de infoproduto genérico.
