@@ -159,6 +159,9 @@ function LandingPage() {
                 ))}
               </div>
 
+              <p className="text-center text-sm font-bold text-muted-foreground mb-3">
+                por apenas: <span className="text-primary">R$10</span>
+              </p>
               <CTAButton onClick={scrollToOfertas}>QUERO REVISAR MAIS RÁPIDO</CTAButton>
 
               <p className="text-center text-xs text-muted-foreground font-medium mt-3">
