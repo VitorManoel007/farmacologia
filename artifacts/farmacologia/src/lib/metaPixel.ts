@@ -47,9 +47,16 @@ export function trackPageView(): void {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // trackInitiateCheckout() — disparado SOMENTE via onClick explícito
+// Lock de 2s impede disparos duplicados por bubbling / double-click / StrictMode
 // ─────────────────────────────────────────────────────────────────────────────
+let _lastCheckoutEvent = 0;
+
 export function trackInitiateCheckout(): void {
   if (typeof window.fbq === "undefined") return;
+  const now = Date.now();
+  if (now - _lastCheckoutEvent < 2000) return;
+  _lastCheckoutEvent = now;
+  console.log("InitiateCheckout fired");
   window.fbq("track", "InitiateCheckout");
 }
 

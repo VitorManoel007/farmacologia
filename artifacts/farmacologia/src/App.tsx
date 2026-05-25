@@ -432,7 +432,7 @@ function LandingPage() {
                   </div>
                 </div>
 
-                <a href="https://pay.cakto.com.br/3asoehq_887420" target="_blank" rel="noopener noreferrer" className="block" onClick={() => trackInitiateCheckout()}>
+                <a href="https://pay.cakto.com.br/3asoehq_887420" target="_blank" rel="noopener noreferrer" className="block" onClick={(e) => { e.stopPropagation(); trackInitiateCheckout(); }}>
                   <Button className="w-full bg-secondary hover:bg-secondary/80 text-white font-black min-h-14 h-auto py-4 rounded-xl uppercase tracking-wide border border-border text-sm">
                     LIBERAR MEU ACESSO
                   </Button>
@@ -482,7 +482,7 @@ function LandingPage() {
                   </div>
                 </div>
 
-                <a href="https://pay.cakto.com.br/ers4bn6_887486" target="_blank" rel="noopener noreferrer" className="block" onClick={() => trackInitiateCheckout()}>
+                <a href="https://pay.cakto.com.br/ers4bn6_887486" target="_blank" rel="noopener noreferrer" className="block" onClick={(e) => { e.stopPropagation(); trackInitiateCheckout(); }}>
                   <CTAButton>LIBERAR MEU ACESSO COMPLETO</CTAButton>
                 </a>
                 <p className="text-center text-[11px] text-muted-foreground mt-2.5">

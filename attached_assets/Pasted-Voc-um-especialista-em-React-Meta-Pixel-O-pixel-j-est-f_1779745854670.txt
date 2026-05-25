@@ -1,0 +1,170 @@
+Você é um especialista em React + Meta Pixel.
+
+O pixel já está funcionando.
+
+PORÉM:
+os eventos InitiateCheckout ainda estão DUPLICANDO nos botões reais:
+
+* LIBERAR MEU ACESSO
+* LIBERAR MEU ACESSO COMPLETO
+
+Quero corrigir APENAS isso.
+
+NÃO reinstalar pixel.
+NÃO criar nova arquitetura.
+NÃO alterar a landing page.
+
+========================
+PROBLEMA
+========
+
+Ao clicar UMA vez no botão:
+o Meta recebe múltiplos:
+
+InitiateCheckout
+
+Provavelmente existe:
+
+* múltiplos listeners
+* múltiplos renders
+* StrictMode
+* bubbling
+* dupla execução do onClick
+* ou navegação disparando novamente.
+
+========================
+OBJETIVO
+========
+
+Garantir:
+
+# 1 clique
+
+1 evento InitiateCheckout
+
+SEM DUPLICAÇÃO.
+
+========================
+O QUE FAZER
+===========
+
+1. IDENTIFICAR TODOS OS PONTOS
+   QUE DISPARAM:
+
+trackInitiateCheckout()
+
+Verificar:
+
+* botão
+* link
+* wrapper
+* listener global
+* componente pai
+* useEffect
+* auto tracking.
+
+========================
+2. REMOVER QUALQUER DISPARO DUPLO
+=================================
+
+Garantir que:
+trackInitiateCheckout()
+
+exista APENAS UMA VEZ por botão.
+
+========================
+3. ADICIONAR LOCK ANTI-DUPLICAÇÃO
+=================================
+
+Dentro de:
+
+trackInitiateCheckout()
+
+Criar proteção:
+
+* impedir novo disparo por 2 segundos
+* ignorar cliques repetidos
+* impedir double fire.
+
+Exemplo esperado:
+
+let lastCheckoutEvent = 0
+
+Se:
+Date.now() - lastCheckoutEvent < 2000
+
+NÃO disparar novo evento.
+
+========================
+4. EVITAR DUPLO CLIQUE
+======================
+
+Adicionar:
+
+event.stopPropagation()
+
+e evitar bubbling.
+
+========================
+5. GARANTIR
+===========
+
+Que:
+
+* Link NÃO dispara novamente
+* navegação NÃO dispara novamente
+* rerender NÃO dispara novamente
+* StrictMode NÃO duplica.
+
+========================
+6. VALIDAR PAGEVIEW
+===================
+
+Garantir que:
+PageView NÃO chama InitiateCheckout.
+
+========================
+7. LOGS TEMPORÁRIOS
+===================
+
+Adicionar:
+
+console.log('InitiateCheckout fired')
+
+Para confirmar:
+
+* apenas 1 log por clique.
+
+========================
+8. RESULTADO FINAL
+==================
+
+Ao clicar:
+
+LIBERAR MEU ACESSO
+
+OU:
+
+LIBERAR MEU ACESSO COMPLETO
+
+Deve acontecer:
+
+✅ apenas 1 evento
+✅ apenas 1 InitiateCheckout
+✅ sem duplicação
+✅ sem múltiplos logs
+✅ sem eventos fantasmas.
+
+========================
+IMPORTANTE
+==========
+
+NÃO remover o pixel.
+NÃO mudar a estrutura do projeto.
+NÃO criar sistema novo.
+
+Apenas:
+
+* corrigir duplicação
+* estabilizar eventos
+* deixar tracking profissional.
