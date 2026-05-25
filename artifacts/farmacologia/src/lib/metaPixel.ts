@@ -6,7 +6,7 @@
 // Este módulo gerencia apenas:
 //   - PageView em trocas de rota SPA
 //   - InitiateCheckout nos botões de compra
-//   - Purchase automático por URL
+//   - Purchase automático por URL com valor dinâmico por plano
 //   - Deduplicação de eventos
 //   - Listener global de checkout
 // ─────────────────────────────────────────────────────────────────────────────
@@ -17,6 +17,14 @@ declare global {
     _fbq: unknown;
   }
 }
+
+// ─── Valores dos planos ────────────────────────────────────────────────────────
+const PLAN_VALUES: Record<string, number> = {
+  essencial: 10.00,
+  completo:  25.00,
+  "1":       10.00,
+  "2":       25.00,
+};
 
 // ─── Deduplicação: impede múltiplos eventos iguais em menos de 2 segundos ────
 const eventTimestamps: Record<string, number> = {};
@@ -47,14 +55,38 @@ export function trackInitiateCheckout(): void {
 }
 
 // ─── Purchase — dispara quando URL indica conclusão de compra ─────────────────
+// Valor dinâmico lido de ?plano=essencial|completo|1|2 ou ?value=XX
 export function trackPurchase(value?: number): void {
   if (typeof window.fbq !== "function") return;
   if (isDuplicate("Purchase")) return;
+  const resolvedValue = value ?? resolvePurchaseValue();
   window.fbq("track", "Purchase", {
-    value: value ?? 0,
+    value: resolvedValue,
     currency: "BRL",
     content_name: "Farmacologia em Mapas Mentais",
   });
+}
+
+function resolvePurchaseValue(): number {
+  try {
+    const params = new URLSearchParams(window.location.search);
+
+    // ?plano=essencial|completo|1|2
+    const plano = params.get("plano") ?? params.get("plan") ?? params.get("produto");
+    if (plano && PLAN_VALUES[plano.toLowerCase()] !== undefined) {
+      return PLAN_VALUES[plano.toLowerCase()];
+    }
+
+    // ?value=10.00
+    const rawValue = params.get("value") ?? params.get("valor");
+    if (rawValue) {
+      const parsed = parseFloat(rawValue);
+      if (!isNaN(parsed) && parsed > 0) return parsed;
+    }
+  } catch {
+    // silently ignore param parsing errors
+  }
+  return 0;
 }
 
 // ─── Listener global de checkout ──────────────────────────────────────────────
@@ -101,7 +133,7 @@ function onRouteChange(): void {
 }
 
 // ─── Purchase automático por URL ──────────────────────────────────────────────
-const PURCHASE_URL_PATTERN = /obrigado|success|purchase/i;
+const PURCHASE_URL_PATTERN = /obrigado|success|purchase|confirmado|aprovado/i;
 
 export function checkPurchaseUrl(): void {
   if (PURCHASE_URL_PATTERN.test(window.location.href)) {
@@ -117,13 +149,15 @@ export function initPixel(): void {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// COMO ADICIONAR NOVOS EVENTOS:
-//   import { trackInitiateCheckout } from "@/lib/metaPixel";
-//   window.fbq("trackCustom", "NomeDoEvento", { chave: "valor" });
-//
 // COMO TESTAR:
 //   1. Instale "Meta Pixel Helper" no Chrome
 //   2. Acesse a URL publicada (não o preview do Replit)
-//   3. O Helper deve mostrar: Pixel ID 993672840078117 + evento PageView
-//   4. Clique num botão de compra → deve aparecer InitiateCheckout
+//   3. Helper deve mostrar: Pixel ID 993672840078117 + PageView
+//   4. Clique num botão de compra → InitiateCheckout
+//   5. Acesse /?plano=essencial na URL de obrigado → Purchase value=10.00
+//      Acesse /?plano=completo na URL de obrigado  → Purchase value=25.00
+//
+// CONFIGURAR REDIRECT NO CAKTO:
+//   Plano Essencial → https://seudominio.com/obrigado?plano=essencial
+//   Plano Completo  → https://seudominio.com/obrigado?plano=completo
 // ─────────────────────────────────────────────────────────────────────────────
