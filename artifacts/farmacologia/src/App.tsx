@@ -395,7 +395,13 @@ function LandingPage() {
               <span className="underline decoration-white decoration-4 underline-offset-4">ESQUECER TUDO</span>
             </h2>
 
-            <p className="text-sm font-bold opacity-90 mb-8">O problema não é você. É a forma de estudar.</p>
+            <p className="text-sm font-bold opacity-90 mb-6">O problema não é você. É a forma de estudar.</p>
+
+            <div className="inline-block bg-white/15 border border-white/30 rounded-xl px-5 py-3 mb-8 backdrop-blur-sm">
+              <p className="text-base font-black uppercase tracking-wide">
+                ⏰ Resolva isso hoje — <span className="underline decoration-2 underline-offset-2">antes da próxima prova</span>
+              </p>
+            </div>
 
             <CTAButton onClick={scrollToOfertas} className="!bg-[#0D0F1C] !text-primary hover:!bg-black shadow-[0_4px_14px_rgba(0,0,0,0.3)] border-2 border-[#0D0F1C]">
               QUERO MUDAR MINHA FORMA DE ESTUDAR
