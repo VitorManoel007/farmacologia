@@ -188,7 +188,7 @@ function LandingPage() {
                   key={i}
                   className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3"
                 >
-                  <img src={item.img} alt="" className="w-16 h-16 shrink-0 object-contain" />
+                  <img src={item.img} alt="" className="w-24 h-24 shrink-0 object-contain" />
                   <span className="text-sm font-semibold text-white">{item.pain}</span>
                 </div>
               ))}
