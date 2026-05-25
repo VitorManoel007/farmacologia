@@ -1,0 +1,204 @@
+Otimize a landing page atual para melhorar VELOCIDADE DE CARREGAMENTO e PERFORMANCE no mobile, SEM alterar a estrutura da página e SEM remover seções importantes.
+
+OBJETIVO:
+Deixar a página:
+
+* mais rápida
+* mais leve
+* mais fluida
+* com carregamento otimizado
+* melhor no mobile.
+
+IMPORTANTE:
+NÃO alterar a copy principal.
+NÃO remover blocos da landing page.
+NÃO mudar a identidade visual atual.
+
+Apenas otimizar:
+
+* performance
+* peso visual
+* carregamento
+* renderização.
+
+========================
+PRIORIDADE PRINCIPAL
+====================
+
+A landing page atualmente possui:
+
+* imagens pesadas
+* muitos efeitos
+* elementos visuais que podem prejudicar velocidade.
+
+O objetivo é:
+
+* acelerar carregamento
+* melhorar experiência mobile
+* diminuir tempo de renderização
+* reduzir peso da página.
+
+========================
+ALTERAÇÃO 1 — OTIMIZAÇÃO DE IMAGENS
+===================================
+
+Comprimir todas as imagens sem perder qualidade visual.
+
+Converter imagens para:
+
+* WebP
+* formatos modernos otimizados.
+
+Reduzir:
+
+* resolução excessiva
+* imagens gigantes
+* elementos desnecessariamente pesados.
+
+Aplicar:
+
+* lazy loading
+* carregamento progressivo.
+
+========================
+ALTERAÇÃO 2 — REDUZIR EFEITOS PESADOS
+=====================================
+
+Diminuir:
+
+* blur excessivo
+* sombras muito fortes
+* glow pesado
+* animações custosas
+* múltiplos gradientes complexos.
+
+Manter visual moderno.
+Mas com menos processamento.
+
+========================
+ALTERAÇÃO 3 — OTIMIZAÇÃO CSS
+============================
+
+Minificar:
+
+* CSS
+* arquivos desnecessários
+* estilos repetidos.
+
+Evitar:
+
+* excesso de classes
+* efeitos duplicados
+* estilos muito complexos.
+
+========================
+ALTERAÇÃO 4 — OTIMIZAÇÃO JAVASCRIPT
+===================================
+
+Remover:
+
+* scripts desnecessários
+* animações pesadas
+* bibliotecas não utilizadas.
+
+Aplicar:
+
+* defer
+* async
+* carregamento inteligente.
+
+========================
+ALTERAÇÃO 5 — PERFORMANCE MOBILE
+================================
+
+Priorizar carregamento mobile.
+
+Garantir:
+
+* hero carregando rapidamente
+* imagens responsivas
+* botões leves
+* renderização rápida no celular.
+
+========================
+ALTERAÇÃO 6 — ANIMAÇÕES
+=======================
+
+Manter apenas:
+
+* fade leve
+* hover simples
+* transições rápidas.
+
+Evitar:
+
+* parallax pesado
+* animações contínuas
+* efeitos complexos.
+
+========================
+ALTERAÇÃO 7 — FONTES
+====================
+
+Reduzir quantidade de:
+
+* pesos de fonte
+* famílias diferentes
+* carregamentos externos.
+
+Utilizar:
+
+* preload de fontes principais
+* fallback otimizado.
+
+========================
+ALTERAÇÃO 8 — OTIMIZAÇÃO GERAL
+==============================
+
+Melhorar:
+
+* Largest Contentful Paint (LCP)
+* First Contentful Paint (FCP)
+* velocidade geral no mobile.
+
+Objetivo:
+A landing page deve abrir:
+
+* rapidamente
+* limpa
+* responsiva
+* sem travamentos.
+
+========================
+IMPORTANTE
+==========
+
+NÃO remover:
+
+* hero
+* mockups
+* provas sociais
+* comparações
+* identidade visual.
+
+Apenas deixar:
+
+* mais leve
+* mais rápida
+* mais otimizada.
+
+========================
+OBJETIVO FINAL
+==============
+
+A página deve manter:
+
+* emoção
+* impacto
+* identidade visual
+* percepção de valor.
+
+Mas carregar:
+
+* muito mais rápido
+* especialmente no mobile.

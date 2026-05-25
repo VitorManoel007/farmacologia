@@ -5,7 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { initPixel, setupSpaTracking, checkPurchaseUrl } from "@/lib/metaPixel";
 import { motion } from "framer-motion";
-import { Check, CheckCircle2, ShieldCheck, Lock, Mail, CreditCard, Headphones, Star, AlertTriangle, Zap, Clock, Target, Brain, Shield } from "lucide-react";
+import { Check, Lock, Mail, CreditCard, Star, AlertTriangle, Zap, Clock, Target, Brain, Shield } from "lucide-react";
 import {
   Accordion,
   AccordionContent,
@@ -26,25 +26,18 @@ import beforeAfterImg from "@assets/magnific_quero-que-mude-o-tema-que_298926390
 import garantiaImg from "@assets/ea2f6b28975c2ded20e94d7e88c8db5f-Photoroom_1778949445674.png";
 import comboCompletoImg from "@assets/magnific_quero-que-voce-mude-o-ult_2989036019-Photoroom_1778949609656.png";
 import comboEssencialImg from "@assets/magnific__quero-que-pague-o-elemento-principal-e-retiro-que-___1778949793083.png";
-import testimonialImg1 from "@assets/63b82082514d9837a3df276e1b356bba_1778950811652.jpg";
-import testimonialImg2 from "@assets/baixados_1778950811652.png";
-import testimonialImg3 from "@assets/346e0250a7bd4237d89e210dd9f60c71_1778950811653.jpg";
-import testimonialImg4 from "@assets/917467dffbdfecc9d25e166ccfb23d6b_1778950811653.jpg";
 import whatsappLidia from "@assets/IMG_1883-ezremove_1779676478637.png";
 import whatsappRafaela from "@assets/IMG_1881-ezremove_1779676478637.png";
 import whatsappAlicia from "@assets/IMG_1885-ezremove_1779676478637.png";
-import resultsImg from "@assets/Captura_de_tela_2026-05-15_094946_1778858131817.png";
-import painImg from "@assets/Captura_de_tela_2026-05-15_095003_1778858131817.png";
-import idealImg from "@assets/Captura_de_tela_2026-05-15_095040_1778858131817.png";
 
 const queryClient = new QueryClient();
 
 const FadeIn = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0, y: 10 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-10%" }}
-    transition={{ duration: 0.5, delay }}
+    viewport={{ once: true, margin: "-5%" }}
+    transition={{ duration: 0.3, delay }}
     className={className}
   >
     {children}
@@ -129,14 +122,13 @@ function LandingPage() {
               alt="Estudante revisando farmacologia com mapas mentais"
               className="w-full object-cover object-center"
               style={{ maxHeight: 380 }}
+              fetchPriority="high"
+              decoding="sync"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-background" />
-            <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(182,255,59,0.08)] pointer-events-none" />
           </div>
 
           <div className="px-6 pt-7 pb-12 relative">
-            {/* Subtle glow */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full bg-primary/6 blur-3xl pointer-events-none" />
 
             <FadeIn>
               <h1 className="font-display text-4xl sm:text-5xl font-black leading-[1.05] mb-4">
@@ -155,17 +147,10 @@ function LandingPage() {
                   "PDFs organizados e simples",
                   "Acesso imediato no celular"
                 ].map((benefit, i) => (
-                  <motion.div
-                    key={i}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: i * 0.08 }}
-                    className="flex items-start gap-2.5"
-                  >
+                  <div key={i} className="flex items-start gap-2.5">
                     <span className="text-base shrink-0">✅</span>
                     <span className="text-sm font-medium">{benefit}</span>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
 
@@ -194,18 +179,13 @@ function LandingPage() {
                 { emoji: "🤯", pain: "Conteúdo demais pra decorar" },
                 { emoji: "💊", pain: "Nomes de fármacos impossíveis" },
               ].map((item, i) => (
-                <motion.div
+                <div
                   key={i}
-                  initial={{ opacity: 0, y: 12 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.35, delay: i * 0.07 }}
-                  whileHover={{ scale: 1.02, borderColor: "rgba(182,255,59,0.3)" }}
-                  className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3 cursor-default transition-colors"
+                  className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3"
                 >
                   <span className="text-2xl shrink-0">{item.emoji}</span>
                   <span className="text-sm font-semibold text-white">{item.pain}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
 
@@ -243,7 +223,7 @@ function LandingPage() {
               ].map((item, i) => (
                 <div key={i} className="snap-center shrink-0 w-[220px] flex flex-col gap-2">
                   <div className="w-[220px] h-[220px] rounded-xl bg-white overflow-hidden shadow-md border border-gray-200 flex items-center justify-center">
-                    <img src={item.img} alt={item.label} className="w-full h-full object-contain" />
+                    <img src={item.img} alt={item.label} className="w-full h-full object-contain" loading="lazy" decoding="async" />
                   </div>
                   <h3 className="font-semibold text-xs text-center text-gray-700 px-1 leading-snug">{item.label}</h3>
                 </div>
@@ -299,7 +279,7 @@ function LandingPage() {
             </h2>
 
             <div className="w-full mb-8 flex items-center justify-center">
-               <img src={beforeAfterImg} alt="Comparação" className="w-full max-w-sm object-contain drop-shadow-xl" />
+               <img src={beforeAfterImg} alt="Comparação" className="w-full max-w-sm object-contain drop-shadow-xl" loading="lazy" decoding="async" />
             </div>
 
             <div className="grid grid-cols-1 gap-6">
@@ -424,7 +404,7 @@ function LandingPage() {
 
                 {/* Imagem do produto */}
                 <div className="flex justify-center mb-4">
-                  <img src={comboEssencialImg} alt="Kit Essencial de Farmacologia" className="w-full max-w-xs object-contain drop-shadow-xl" />
+                  <img src={comboEssencialImg} alt="Kit Essencial de Farmacologia" className="w-full max-w-xs object-contain drop-shadow-xl" loading="lazy" decoding="async" />
                 </div>
 
                 {/* Benefícios */}
@@ -480,7 +460,7 @@ function LandingPage() {
 
                 {/* Imagem do kit */}
                 <div className="flex justify-center mb-4">
-                  <img src={comboCompletoImg} alt="Kit Completo de Farmacologia" className="w-full max-w-xs object-contain drop-shadow-xl" />
+                  <img src={comboCompletoImg} alt="Kit Completo de Farmacologia" className="w-full max-w-xs object-contain drop-shadow-xl" loading="lazy" decoding="async" />
                 </div>
 
                 {/* Benefícios */}
@@ -551,6 +531,8 @@ function LandingPage() {
                       src={t.img}
                       alt={`Depoimento de ${t.name}`}
                       className="w-full object-cover"
+                      loading="lazy"
+                      decoding="async"
                     />
                   </div>
                   {/* Label abaixo */}
@@ -573,7 +555,7 @@ function LandingPage() {
         {/* BLOCO 09 — GARANTIA (dark navy) */}
         <section className="px-6 py-14 bg-background text-center">
           <FadeIn>
-            <img src={garantiaImg} alt="Garantia 7 Dias" className="w-64 h-64 mx-auto mb-6 object-contain drop-shadow-2xl" />
+            <img src={garantiaImg} alt="Garantia 7 Dias" className="w-64 h-64 mx-auto mb-6 object-contain drop-shadow-2xl" loading="lazy" decoding="async" />
 
             <h2 className="font-display text-4xl sm:text-5xl font-black leading-none uppercase mb-4">
               TESTE POR <br/>
