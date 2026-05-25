@@ -389,11 +389,10 @@ function LandingPage() {
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
           
           <FadeIn className="relative z-10">
-            <div className="inline-block bg-white/15 border border-white/30 rounded-xl px-5 py-3 mb-8 backdrop-blur-sm">
-              <p className="text-base font-black uppercase tracking-wide">
-                ⏰ Resolva isso hoje — <span className="underline decoration-2 underline-offset-2">antes da próxima prova</span>
-              </p>
-            </div>
+            <p className="font-display text-4xl sm:text-5xl font-black uppercase leading-[0.95] mb-8">
+              ⏰ Resolva isso hoje —<br/>
+              <span className="underline decoration-white decoration-4 underline-offset-4">antes da próxima prova</span>
+            </p>
 
             <CTAButton onClick={scrollToOfertas} className="!bg-[#0D0F1C] !text-primary hover:!bg-black shadow-[0_4px_14px_rgba(0,0,0,0.3)] border-2 border-[#0D0F1C]">
               QUERO MUDAR MINHA FORMA DE ESTUDAR
