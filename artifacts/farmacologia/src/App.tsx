@@ -620,11 +620,35 @@ function LandingPage() {
   );
 }
 
+function ThankYouPage() {
+  return (
+    <div className="min-h-screen bg-[#05060A] text-white font-sans flex justify-center">
+      <div className="w-full max-w-[430px] bg-background relative shadow-2xl flex flex-col items-center justify-center px-6 py-20 text-center">
+        <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-6 shadow-[0_0_32px_rgba(182,255,59,0.4)]">
+          <Check className="w-9 h-9 text-[#0D0F1C]" strokeWidth={3} />
+        </div>
+        <h1 className="font-display text-4xl font-black uppercase leading-tight mb-4">
+          Compra <span className="text-primary">confirmada!</span>
+        </h1>
+        <p className="text-muted-foreground text-[15px] leading-relaxed mb-8">
+          Seu acesso foi liberado. Verifique seu e-mail — o material chega em instantes.
+        </p>
+        <a href="/" className="inline-block">
+          <Button className="bg-secondary hover:bg-secondary/80 text-white font-bold uppercase tracking-wide px-8 py-3 rounded-xl">
+            Voltar ao início
+          </Button>
+        </a>
+      </div>
+    </div>
+  );
+}
+
 function Router() {
   usePixelTracking();
   return (
     <Switch>
       <Route path="/" component={LandingPage} />
+      <Route path="/obrigado" component={ThankYouPage} />
       <Route component={NotFound} />
     </Switch>
   );
