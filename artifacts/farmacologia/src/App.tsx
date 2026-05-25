@@ -368,6 +368,22 @@ function LandingPage() {
           </FadeIn>
         </section>
 
+        {/* BLOCO 06 — DOR (red background #FF3B3B) */}
+        <section className="px-6 py-16 bg-destructive text-white text-center relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
+          
+          <FadeIn className="relative z-10">
+            <p className="font-display text-4xl sm:text-5xl font-black uppercase leading-[0.95] mb-8">
+              Pare de sofrer com<br/>
+              <span className="underline decoration-white decoration-4 underline-offset-4">farmacologia hoje.</span>
+            </p>
+
+            <CTAButton onClick={scrollToOfertas} className="!bg-[#0D0F1C] !text-primary hover:!bg-black shadow-[0_4px_14px_rgba(0,0,0,0.3)] border-2 border-[#0D0F1C]">
+              QUERO MUDAR MINHA FORMA DE ESTUDAR
+            </CTAButton>
+          </FadeIn>
+        </section>
+
         {/* BLOCO 07 — OFERTAS (dark navy) */}
         <section id="ofertas" className="px-6 py-14 bg-background">
           <FadeIn>
