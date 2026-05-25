@@ -214,34 +214,31 @@ function LandingPage() {
         </section>
 
         {/* BLOCO 02 — VISUALIZAÇÃO DO MATERIAL (white bg) */}
-        <section className="py-12 bg-white text-[#0D0F1C] overflow-hidden">
-          <div className="px-6 mb-8">
+        <section className="py-10 bg-white text-[#0D0F1C] overflow-hidden">
+          <div className="px-6 mb-6">
             <FadeIn>
-              <h2 className="font-display text-4xl sm:text-5xl font-black leading-none uppercase mb-4">
-                VEJA COMO SÃO OS <br/>
-                <span className="text-primary drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">MAPAS MENTAIS</span>
+              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-1">+110 páginas de mapas</p>
+              <h2 className="font-display text-3xl sm:text-4xl font-black leading-none uppercase">
+                VEJA OS <span className="text-primary drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">MAPAS MENTAIS</span>
               </h2>
-              <p className="text-gray-600 text-sm font-medium">
-                Mais de 110 páginas desenvolvidas para transformar conteúdos difíceis em revisões rápidas e intuitivas.
-              </p>
             </FadeIn>
           </div>
 
-          <div className="w-full mb-8">
+          <div className="w-full mb-6">
             <div className="flex overflow-x-auto snap-x snap-mandatory hide-scrollbar pl-6 pr-6 gap-4 pb-4">
               {[
-                { label: "Abacavir — Antirretroviral", img: carouselImg1 },
-                { label: "Abiraterona — Anticancerígeno", img: carouselImg2 },
-                { label: "Acarbosa — Antidiabético", img: carouselImg3 },
-                { label: "Aceclofenac — Anti-inflamatório", img: carouselImg4 },
-                { label: "Acetazolamida — Diurético", img: carouselImg5 },
-                { label: "Ácido Ascórbico — Vitamina C", img: carouselImg6 },
+                { label: "Abacavir", img: carouselImg1 },
+                { label: "Abiraterona", img: carouselImg2 },
+                { label: "Acarbosa", img: carouselImg3 },
+                { label: "Aceclofenac", img: carouselImg4 },
+                { label: "Acetazolamida", img: carouselImg5 },
+                { label: "Ácido Ascórbico", img: carouselImg6 },
               ].map((item, i) => (
-                <div key={i} className="snap-center shrink-0 w-[220px] flex flex-col gap-2">
-                  <div className="w-[220px] h-[220px] rounded-xl bg-white overflow-hidden shadow-md border border-gray-200 flex items-center justify-center">
+                <div key={i} className="snap-center shrink-0 w-[200px] flex flex-col gap-2">
+                  <div className="w-[200px] h-[200px] rounded-xl bg-white overflow-hidden shadow-md border border-gray-200 flex items-center justify-center">
                     <img src={item.img} alt={item.label} className="w-full h-full object-contain" />
                   </div>
-                  <h3 className="font-semibold text-xs text-center text-gray-700 px-1 leading-snug">{item.label}</h3>
+                  <h3 className="font-bold text-xs text-center text-gray-700 px-1">{item.label}</h3>
                 </div>
               ))}
             </div>
@@ -249,41 +246,40 @@ function LandingPage() {
 
           <div className="px-6">
             <FadeIn>
-              <p className="text-gray-600 text-sm text-center font-medium leading-relaxed mb-8 px-2">
-                Todos os mapas foram organizados com cores, setas, conexões visuais e estruturas que facilitam a memorização de medicamentos e mecanismos farmacológicos.
-              </p>
               <CTAButton onClick={scrollToOfertas}>QUERO ESTUDAR ASSIM</CTAButton>
             </FadeIn>
           </div>
         </section>
 
         {/* BLOCO 03 — BENEFÍCIOS (dark navy bg) */}
-        <section className="px-6 py-14 bg-background">
+        <section className="px-6 py-10 bg-background">
           <FadeIn>
-            <h2 className="font-display text-4xl sm:text-5xl font-black leading-none uppercase mb-4 text-center">
-              O QUE VAI MUDAR NA SUA <br/>
-              <span className="text-primary">ROTINA DE ESTUDOS</span>
+            <h2 className="font-display text-3xl font-black leading-none uppercase mb-6 text-center">
+              O QUE VAI <span className="text-primary">MUDAR</span>
             </h2>
-            <p className="text-muted-foreground text-center text-sm mb-10 font-medium">
-              Chega de estudar por horas e esquecer tudo depois. Agora você aprende visualmente e revisa em minutos.
-            </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+            <div className="grid grid-cols-2 gap-3 mb-8">
               {[
-                { icon: Zap, title: "APRENDA MAIS RÁPIDO", text: "Visualize mecanismos de ação e memorize medicamentos sem precisar decorar páginas enormes." },
-                { icon: Clock, title: "REVISE EM MINUTOS", text: "Ideal para revisar antes da prova, plantão ou estágio sem perder tempo." },
-                { icon: Target, title: "ESTUDE COM MAIS CLAREZA", text: "Os conteúdos são organizados de forma simples e intuitiva para facilitar o entendimento." },
-                { icon: Brain, title: "MENOS CONFUSÃO", text: "Pare de misturar nomes, classes e indicações clínicas durante os estudos." },
-                { icon: Shield, title: "MAIS SEGURANÇA", text: "Chegue nas provas sabendo exatamente como cada medicamento funciona." },
-                { icon: Target, title: "FOCO NO QUE IMPORTA", text: "Sem enrolação, sem textos gigantes e sem teoria desnecessária." }
+                { icon: Zap, title: "Aprenda rápido" },
+                { icon: Clock, title: "Revise em minutos" },
+                { icon: Brain, title: "Menos confusão" },
+                { icon: Shield, title: "Mais segurança" },
+                { icon: Target, title: "Mais clareza" },
+                { icon: CheckCircle2, title: "Foco total" },
               ].map((item, i) => (
-                <div key={i} className="bg-card border border-border rounded-xl p-5 relative overflow-hidden">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mb-4">
-                    <item.icon className="w-5 h-5 text-primary" />
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: i * 0.06 }}
+                  className="bg-card border border-border rounded-xl p-4 flex flex-col items-center text-center gap-2"
+                >
+                  <div className="w-9 h-9 rounded-full bg-primary/20 flex items-center justify-center">
+                    <item.icon className="w-4 h-4 text-primary" />
                   </div>
-                  <h3 className="font-bold text-[15px] mb-2 uppercase">{item.title}</h3>
-                  <p className="text-muted-foreground text-[13px] leading-relaxed">{item.text}</p>
-                </div>
+                  <h3 className="font-bold text-[13px] uppercase leading-tight">{item.title}</h3>
+                </motion.div>
               ))}
             </div>
 
@@ -292,96 +288,88 @@ function LandingPage() {
         </section>
 
         {/* BLOCO 04 — COMPARAÇÃO (white bg) */}
-        <section className="px-6 py-14 bg-white text-[#0D0F1C]">
+        <section className="px-6 py-10 bg-white text-[#0D0F1C]">
           <FadeIn>
-            <h2 className="font-display text-4xl font-black leading-none uppercase mb-8 text-center">
-              VEJA A DIFERENÇA <br/>
-              <span className="text-destructive">SEM O MATERIAL</span> E <br/>
-              <span className="text-primary drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">COM O MATERIAL</span>
+            <h2 className="font-display text-3xl font-black leading-none uppercase mb-6 text-center">
+              <span className="text-destructive">ANTES</span> &nbsp;→&nbsp; <span className="text-[#16a34a]">DEPOIS</span>
             </h2>
 
-            <div className="w-full mb-8 flex items-center justify-center">
-               <img src={beforeAfterImg} alt="Comparação" className="w-full max-w-sm object-contain drop-shadow-xl" />
+            <div className="grid grid-cols-2 gap-3">
+              <div className="bg-red-50 rounded-xl p-4 border border-red-100">
+                <p className="text-destructive font-black text-xs uppercase mb-3 flex items-center gap-1">❌ Antes</p>
+                <ul className="space-y-2">
+                  {[
+                    "PDFs gigantes",
+                    "Decora e esquece",
+                    "Mistura tudo",
+                    "Horas perdidas",
+                    "Ansiedade",
+                  ].map((item, i) => (
+                    <li key={i} className="text-xs font-semibold text-gray-700 flex items-start gap-1.5">
+                      <div className="w-1 h-1 rounded-full bg-red-400 mt-1.5 shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+                <p className="text-green-700 font-black text-xs uppercase mb-3 flex items-center gap-1">✅ Depois</p>
+                <ul className="space-y-2">
+                  {[
+                    "Mapa visual claro",
+                    "Revisão em 2 min",
+                    "Tudo organizado",
+                    "Tempo de sobra",
+                    "Mais confiança",
+                  ].map((item, i) => (
+                    <li key={i} className="text-xs font-semibold text-gray-800 flex items-start gap-1.5">
+                      <Check className="w-3 h-3 text-green-600 shrink-0 mt-0.5" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-6">
-              <div className="bg-red-50 rounded-xl p-5 border border-red-100">
-                <h3 className="text-destructive font-black uppercase text-lg flex items-center gap-2 mb-4">
-                  <span className="text-xl">❌</span> SEM O MATERIAL
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "Confunde beta-bloqueador com bloqueador de canal de cálcio",
-                    "Decora mecanismo hoje, esquece amanhã",
-                    "Perde tempo relendo a mesma apostila 5 vezes",
-                    "Na prova, mistura indicação com contraindicação",
-                    "Horas estudando farmacologia sem sentir evolução"
-                  ].map((item, i) => (
-                    <li key={i} className="text-sm font-medium text-gray-700 flex items-start gap-2">
-                      <div className="w-1.5 h-1.5 rounded-full bg-red-400 mt-1.5 shrink-0" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="bg-green-50 rounded-xl p-5 border border-green-200">
-                <h3 className="text-[#0D0F1C] font-black uppercase text-lg flex items-center gap-2 mb-4">
-                  <span className="text-xl">✅</span> COM O MATERIAL
-                </h3>
-                <ul className="space-y-3">
-                  {[
-                    "Diferencia classes farmacológicas pelo mapa visual",
-                    "Revisão de um medicamento completo em 2 minutos",
-                    "Associa mecanismo de ação com efeito adverso facilmente",
-                    "Chega na prova sabendo indicação, dose e contraindicação",
-                    "Estuda menos tempo com muito mais fixação"
-                  ].map((item, i) => (
-                    <li key={i} className="text-sm font-medium text-gray-800 flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-600 shrink-0 mt-0.5" />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+            <div className="mt-6">
+              <img src={beforeAfterImg} alt="Comparação" className="w-full max-w-sm mx-auto object-contain drop-shadow-xl" />
             </div>
           </FadeIn>
         </section>
 
         {/* BLOCO 05 — RESULTADO (dark navy bg) */}
-        <section className="px-6 py-14 bg-background">
-          <FadeIn className="bg-card border border-border rounded-2xl p-6 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1.5 bg-primary" />
-            
-            <div className="inline-flex items-center gap-1.5 bg-secondary/50 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-6 border border-border text-primary">
-              <Star className="w-3.5 h-3.5 fill-current" /> RESULTADO REAL
+        <section className="px-6 py-10 bg-background">
+          <FadeIn className="bg-card border border-border rounded-2xl p-5 relative overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-1 bg-primary" />
+
+            <div className="inline-flex items-center gap-1.5 bg-secondary/50 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-4 border border-border text-primary">
+              <Star className="w-3 h-3 fill-current" /> RESULTADO REAL
             </div>
 
-            <h2 className="font-display text-4xl font-black leading-none uppercase mb-4">
-              VOCÊ VAI SENTIR A <br/>
-              <span className="underline decoration-primary decoration-4 underline-offset-4">DIFERENÇA LOGO NOS PRIMEIROS ESTUDOS</span>
+            <h2 className="font-display text-3xl font-black leading-none uppercase mb-5">
+              SINTA A <span className="text-primary">DIFERENÇA</span><br/>DESDE O 1º ESTUDO
             </h2>
 
-            <p className="text-muted-foreground text-sm italic font-medium mb-8">
-              "Imagine chegar na prova e lembrar de cada detalhe estudado com mais clareza, rapidez e confiança."
-            </p>
-
-            <ul className="space-y-4 mb-8">
+            <ul className="space-y-3 mb-6">
               {[
-                "Memoriza mecanismos farmacológicos mais rápido",
-                "Entende classes medicamentosas sem decorar",
-                "Revisões de conteúdos em poucos minutos",
-                "Aprende de forma visual e prática",
-                "Mais segurança para provas e estágios",
-                "Organização mental muito mais eficiente",
-                "Menos ansiedade antes das avaliações"
+                "✅ Revisão rápida",
+                "✅ Mais clareza",
+                "✅ Menos ansiedade",
+                "✅ Memorize mais fácil",
+                "✅ PDFs organizados visualmente",
+                "✅ Mais segurança nas provas",
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center shrink-0 mt-0.5 shadow-[0_0_8px_rgba(182,255,59,0.3)]">
-                    <Check className="w-3.5 h-3.5 text-[#0D0F1C]" strokeWidth={3} />
-                  </div>
-                  <span className="text-[15px] font-medium leading-tight">{item}</span>
-                </li>
+                <motion.li
+                  key={i}
+                  initial={{ opacity: 0, x: -8 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.3, delay: i * 0.06 }}
+                  className="text-[15px] font-semibold leading-tight"
+                >
+                  {item}
+                </motion.li>
               ))}
             </ul>
 
@@ -389,21 +377,28 @@ function LandingPage() {
           </FadeIn>
         </section>
 
-        {/* BLOCO 06 — DOR (red background #FF3B3B) */}
-        <section className="px-6 py-16 bg-destructive text-white text-center relative overflow-hidden">
-          {/* subtle background pattern */}
+        {/* BLOCO 06 — DOR (red background) */}
+        <section className="px-6 py-10 bg-destructive text-white text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(#fff 1px, transparent 1px)', backgroundSize: '20px 20px' }}></div>
-          
+
           <FadeIn className="relative z-10">
-            <h2 className="font-display text-4xl sm:text-5xl font-black leading-[0.95] uppercase mb-6">
-              VOCÊ NÃO ESTÁ CANSADO DE ESTUDAR… <br/>
-              VOCÊ ESTÁ CANSADO DE <br/>
-              <span className="underline decoration-white decoration-4 underline-offset-4">ESQUECER TUDO</span>
+            <h2 className="font-display text-3xl sm:text-4xl font-black leading-[1.05] uppercase mb-5">
+              VOCÊ NÃO ESTÁ CANSADO DE ESTUDAR…<br/>
+              <span className="underline decoration-white decoration-4 underline-offset-4">ESTÁ CANSADO DE ESQUECER TUDO</span>
             </h2>
 
-            <p className="text-[15px] font-medium leading-relaxed mb-8 opacity-90">
-              Você passa horas lendo farmacologia, tenta decorar nomes impossíveis, revisa inúmeras vezes… e mesmo assim chega na prova sentindo que não lembra de nada. O problema não é sua capacidade. O problema é estudar da forma errada. Seu cérebro aprende muito mais rápido quando o conteúdo é visual, organizado e resumido estrategicamente.
-            </p>
+            <div className="grid grid-cols-1 gap-2 mb-6 text-left max-w-xs mx-auto">
+              {[
+                "📚 Horas lendo sem fixar",
+                "😤 Nomes impossíveis de decorar",
+                "😰 Revisão inúmeras vezes, sem resultado",
+                "🧠 Na prova, lembrou de nada",
+              ].map((item, i) => (
+                <p key={i} className="text-sm font-semibold opacity-95 bg-white/10 rounded-lg px-3 py-2">{item}</p>
+              ))}
+            </div>
+
+            <p className="text-sm font-bold opacity-90 mb-6">O problema não é você. É a forma de estudar.</p>
 
             <CTAButton onClick={scrollToOfertas} className="!bg-[#0D0F1C] !text-primary hover:!bg-black shadow-[0_4px_14px_rgba(0,0,0,0.3)] border-2 border-[#0D0F1C]">
               QUERO MUDAR MINHA FORMA DE ESTUDAR
