@@ -392,15 +392,6 @@ function LandingPage() {
               <span className="underline decoration-white decoration-4 underline-offset-4">ESQUECER TUDO</span>
             </h2>
 
-            <div className="grid grid-cols-1 gap-2 mb-8 text-center max-w-xs mx-auto">
-              {[
-                "📚 Horas lendo. PDFs gigantes.",
-                "😤 Nomes impossíveis de decorar.",
-                "😰 Revisão sem fim, sem fixar.",
-              ].map((item, i) => (
-                <p key={i} className="text-sm font-semibold opacity-95 bg-white/10 rounded-lg px-4 py-2.5">{item}</p>
-              ))}
-            </div>
             <p className="text-sm font-bold opacity-90 mb-8">O problema não é você. É a forma de estudar.</p>
 
             <CTAButton onClick={scrollToOfertas} className="!bg-[#0D0F1C] !text-primary hover:!bg-black shadow-[0_4px_14px_rgba(0,0,0,0.3)] border-2 border-[#0D0F1C]">
