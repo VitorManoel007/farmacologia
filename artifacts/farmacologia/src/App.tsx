@@ -159,9 +159,12 @@ function LandingPage() {
                 ))}
               </div>
 
-              <p className="text-center text-sm font-bold text-muted-foreground mb-3">
-                por apenas: <span className="text-primary">R$10</span>
-              </p>
+              <div className="flex items-center justify-center mb-3">
+                <div className="inline-flex items-center gap-2 bg-primary/15 border border-primary/40 rounded-full px-4 py-2">
+                  <span className="text-xs font-bold text-white/70 uppercase tracking-widest">por apenas</span>
+                  <span className="font-display text-2xl font-black text-primary leading-none">R$10</span>
+                </div>
+              </div>
               <CTAButton onClick={scrollToOfertas}>QUERO REVISAR MAIS RÁPIDO</CTAButton>
 
               <p className="text-center text-xs text-muted-foreground font-medium mt-3">
