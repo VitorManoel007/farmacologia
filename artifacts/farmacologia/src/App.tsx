@@ -30,9 +30,9 @@ import testimonialImg1 from "@assets/63b82082514d9837a3df276e1b356bba_1778950811
 import testimonialImg2 from "@assets/baixados_1778950811652.png";
 import testimonialImg3 from "@assets/346e0250a7bd4237d89e210dd9f60c71_1778950811653.jpg";
 import testimonialImg4 from "@assets/917467dffbdfecc9d25e166ccfb23d6b_1778950811653.jpg";
-import whatsappLidia from "@assets/IMG_1883_1779676062654.PNG";
-import whatsappRafaela from "@assets/IMG_1881_1779676062654.PNG";
-import whatsappAlicia from "@assets/IMG_1885_1779676062654.PNG";
+import whatsappLidia from "@assets/IMG_1883-ezremove_1779676478637.png";
+import whatsappRafaela from "@assets/IMG_1881-ezremove_1779676478637.png";
+import whatsappAlicia from "@assets/IMG_1885-ezremove_1779676478637.png";
 import resultsImg from "@assets/Captura_de_tela_2026-05-15_094946_1778858131817.png";
 import painImg from "@assets/Captura_de_tela_2026-05-15_095003_1778858131817.png";
 import idealImg from "@assets/Captura_de_tela_2026-05-15_095040_1778858131817.png";
