@@ -1,0 +1,169 @@
+Você é um especialista em Meta Pixel para React SPA.
+
+Preciso de uma implementação SIMPLES, LIMPA e ESTÁVEL do Meta Pixel em um projeto:
+
+* React
+* TypeScript
+* Wouter
+* SPA
+* hospedado no Replit
+
+PIXEL ID:
+
+993672840078117
+
+OBJETIVO:
+Implementar apenas o necessário para campanhas de conversão no Meta Ads.
+
+IMPORTANTE:
+NÃO criar sistema complexo.
+NÃO usar deduplicação avançada.
+NÃO criar listeners globais pesados.
+NÃO usar engenharia excessiva.
+
+Quero uma implementação:
+
+* simples
+* profissional
+* leve
+* confiável
+* fácil de manter
+* funcionando em produção.
+
+========================
+EVENTOS NECESSÁRIOS
+===================
+
+Implementar apenas:
+
+1. PageView
+2. InitiateCheckout
+3. Purchase
+
+========================
+ESTRUTURA
+=========
+
+Criar arquivo:
+
+src/lib/metaPixel.ts
+
+========================
+IMPLEMENTAÇÃO
+=============
+
+Adicionar o Meta Pixel oficial corretamente utilizando:
+
+993672840078117
+
+Criar funções simples:
+
+* initPixel()
+* trackPageView()
+* trackInitiateCheckout()
+* trackPurchase()
+
+========================
+PAGEVIEW
+========
+
+Disparar:
+
+* no carregamento inicial
+* em toda troca de rota SPA usando Wouter.
+
+IMPORTANTE:
+Implementação simples e estável.
+
+========================
+INITIATE CHECKOUT
+=================
+
+Disparar apenas:
+
+* nos botões principais de compra.
+
+Botões:
+
+* GARANTIR COMBO ESSENCIAL
+* GARANTIR COMBO COMPLETO
+* LIBERAR MEU ACESSO
+* LIBERAR MEU ACESSO COMPLETO
+
+Implementar usando:
+onClick.
+
+NÃO usar:
+
+* listener global
+* detecção automática pesada
+* tracking complexo.
+
+========================
+PURCHASE
+========
+
+Disparar somente:
+
+* na página de obrigado/sucesso.
+
+Detectar URL contendo:
+
+* obrigado
+* success
+* purchase
+
+Adicionar:
+
+currency: 'BRL'
+
+Valores:
+
+* 10.00
+* 25.00
+
+========================
+APP.TSX
+=======
+
+Inicializar pixel apenas UMA vez.
+
+Rastrear mudanças de rota SPA corretamente.
+
+Compatível com:
+
+* React Strict Mode
+* produção
+* deploy.
+
+========================
+IMPORTANTE
+==========
+
+NÃO implementar:
+
+* deduplicação complexa
+* anti-spam
+* proteção exagerada
+* listeners globais
+* automações pesadas
+* fallbacks desnecessários.
+
+========================
+OBJETIVO FINAL
+==============
+
+Ter uma implementação:
+
+* leve
+* estável
+* rápida
+* simples
+* funcionando corretamente no Meta Events Manager.
+
+Ao finalizar:
+mostrar:
+
+* onde adicionar novos eventos
+* como testar no Meta Events Manager
+* como validar PageView, InitiateCheckout e Purchase.
