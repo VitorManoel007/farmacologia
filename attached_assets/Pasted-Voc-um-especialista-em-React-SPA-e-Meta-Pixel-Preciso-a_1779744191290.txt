@@ -1,0 +1,139 @@
+Você é um especialista em React SPA e Meta Pixel.
+
+Preciso apenas REMOVER A DUPLICAÇÃO dos eventos do Meta Pixel.
+
+NÃO refatore o projeto.
+NÃO crie nova arquitetura.
+NÃO implemente sistemas complexos.
+
+OBJETIVO:
+Deixar os eventos:
+
+* limpos
+* únicos
+* estáveis
+* sem duplicação.
+
+STACK:
+
+* React
+* TypeScript
+* Wouter
+* SPA
+* Replit
+
+========================
+PROBLEMAS ATUAIS
+================
+
+Os eventos estão funcionando.
+
+Porém:
+
+* PageView duplica
+* InitiateCheckout duplica
+* existe evento automático da Meta:
+  SubscribedButtonClick
+
+========================
+O QUE FAZER
+===========
+
+1. REMOVER React StrictMode
+
+No:
+main.tsx
+
+Trocar:
+
+<React.StrictMode> <App />
+</React.StrictMode>
+
+Por:
+
+<App />
+
+========================
+2. REMOVER EVENTOS AUTOMÁTICOS
+==============================
+
+Garantir que NÃO exista:
+
+* listener global
+* tracking automático
+* detecção automática de botão
+* observer
+* auto tracking de links.
+
+Remover qualquer:
+
+* addEventListener global
+* document click tracking
+* MutationObserver.
+
+========================
+3. PAGEVIEW
+===========
+
+Deixar APENAS:
+
+useEffect(() => {
+trackPageView()
+}, [location])
+
+IMPORTANTE:
+NÃO disparar PageView no initPixel().
+
+========================
+4. INITIATECHECKOUT
+===================
+
+Disparar SOMENTE:
+
+onClick={() => trackInitiateCheckout()}
+
+Nos botões de compra.
+
+NÃO usar:
+
+* detecção automática
+* tracking por URL
+* listeners globais.
+
+========================
+5. TRACK CORRETO
+================
+
+Garantir que TODOS os eventos usem:
+
+fbq('track', ...)
+
+E NÃO:
+
+fbq('trackCustom', ...)
+
+========================
+6. REMOVER DUPLICAÇÃO
+=====================
+
+Garantir:
+
+* 1 clique = 1 evento
+* 1 rota = 1 PageView.
+
+========================
+RESULTADO FINAL
+===============
+
+No Meta Events Manager deve aparecer:
+
+✅ 1 PageView
+✅ 1 InitiateCheckout
+✅ 1 Purchase
+
+Sem:
+
+* eventos duplicados
+* SubscribedButtonClick
+* eventos fantasmas
+* múltiplos disparos.
