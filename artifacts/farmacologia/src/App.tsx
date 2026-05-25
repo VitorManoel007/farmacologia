@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 
-import heroImg from "@assets/magnific_quero-que-voce-mude-o-ult_2989036019-Photoroom_1778858706667.png";
+import heroImg from "@assets/magnific__criar-mockup-simples-e-altamente-conversor-para-um___1779671297483.png";
 import carouselImg1 from "@assets/Captura_de_tela_2026-05-15_110029_1778947984603.png";
 import carouselImg2 from "@assets/Captura_de_tela_2026-05-15_110103_1778947984604.png";
 import carouselImg3 from "@assets/Captura_de_tela_2026-05-15_110126_1778947984604.png";
@@ -118,60 +118,61 @@ function LandingPage() {
         </div>
 
         {/* BLOCO 01 — HERO */}
-        <section className="px-6 pt-10 pb-12 bg-background relative overflow-hidden">
-          {/* Subtle glow background */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
-          
-          <FadeIn>
-            <h1 className="font-display text-4xl sm:text-5xl font-black leading-[1.05] mb-5">
-              Você passa horas estudando farmacologia…
-              <span className="text-primary block mt-1">e mesmo assim esquece tudo na prova?</span>
-            </h1>
+        <section className="bg-background relative overflow-hidden">
+          {/* Hero image full-width with green glow overlay */}
+          <div className="relative w-full">
+            <img
+              src={heroImg}
+              alt="Estudante revisando farmacologia com mapas mentais"
+              className="w-full object-cover object-center"
+              style={{ maxHeight: 380 }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-background" />
+            <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(182,255,59,0.08)] pointer-events-none" />
+          </div>
 
-            <p className="text-muted-foreground text-[15px] leading-relaxed mb-7">
-              Mapas mentais visuais para revisar mais rápido, memorizar melhor e parar de sofrer com PDFs gigantes.
-            </p>
+          <div className="px-6 pt-7 pb-12 relative">
+            {/* Subtle glow */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full bg-primary/6 blur-3xl pointer-events-none" />
 
-            <div className="space-y-3 mb-8">
-              {[
-                "Revisão rápida antes da prova",
-                "Mais clareza para memorizar fármacos",
-                "Pare de se perder em PDFs cansativos",
-                "Estude visualmente e memorize mais rápido"
-              ].map((benefit, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="flex items-start gap-2.5"
-                >
-                  <span className="text-base shrink-0">✅</span>
-                  <span className="text-sm font-medium">{benefit}</span>
-                </motion.div>
-              ))}
-            </div>
+            <FadeIn>
+              <h1 className="font-display text-4xl sm:text-5xl font-black leading-[1.05] mb-4">
+                Farmacologia não é difícil.
+                <span className="text-primary block mt-1">Difícil é esquecer tudo depois de horas estudando.</span>
+              </h1>
 
-            <div className="w-full mb-8 flex items-center justify-center">
-              <motion.img
-                src={heroImg}
-                alt="Mockup do material"
-                className="w-full max-w-[380px] object-contain drop-shadow-2xl"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              />
-            </div>
-
-            <CTAButton onClick={scrollToOfertas}>QUERO REVISAR MAIS RÁPIDO</CTAButton>
-
-            <div className="bg-secondary/50 rounded-lg p-4 mt-5 flex items-start gap-3 border border-border">
-              <Mail className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-              <p className="text-xs text-muted-foreground font-medium leading-relaxed">
-                Receba todos os materiais no mesmo dia diretamente no seu Gmail após a compra.
+              <p className="text-muted-foreground text-[15px] leading-relaxed mb-6">
+                Mapas mentais visuais criados para revisar mais rápido e memorizar farmacologia sem sofrer com PDFs gigantes.
               </p>
-            </div>
-          </FadeIn>
+
+              <div className="space-y-3 mb-7">
+                {[
+                  "Revisão rápida antes da prova",
+                  "Memorize visualmente",
+                  "PDFs organizados e simples",
+                  "Acesso imediato no celular"
+                ].map((benefit, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: i * 0.08 }}
+                    className="flex items-start gap-2.5"
+                  >
+                    <span className="text-base shrink-0">✅</span>
+                    <span className="text-sm font-medium">{benefit}</span>
+                  </motion.div>
+                ))}
+              </div>
+
+              <CTAButton onClick={scrollToOfertas}>QUERO REVISAR MAIS RÁPIDO</CTAButton>
+
+              <p className="text-center text-xs text-muted-foreground font-medium mt-3">
+                Mais de 20 mil estudantes já usam esse material.
+              </p>
+            </FadeIn>
+          </div>
         </section>
 
         {/* BLOCO 01B — IDENTIFICAÇÃO (pain cards) */}
@@ -249,9 +250,6 @@ function LandingPage() {
 
           <div className="px-6">
             <FadeIn>
-              <p className="text-gray-600 text-sm text-center font-medium leading-relaxed mb-8 px-2">
-                Todos os mapas foram organizados com cores, setas, conexões visuais e estruturas que facilitam a memorização de medicamentos e mecanismos farmacológicos.
-              </p>
               <CTAButton onClick={scrollToOfertas}>QUERO ESTUDAR ASSIM</CTAButton>
             </FadeIn>
           </div>
@@ -260,28 +258,25 @@ function LandingPage() {
         {/* BLOCO 03 — BENEFÍCIOS (dark navy bg) */}
         <section className="px-6 py-14 bg-background">
           <FadeIn>
-            <h2 className="font-display text-4xl sm:text-5xl font-black leading-none uppercase mb-4 text-center">
+            <h2 className="font-display text-4xl sm:text-5xl font-black leading-none uppercase mb-8 text-center">
               O QUE VAI MUDAR NA SUA <br/>
               <span className="text-primary">ROTINA DE ESTUDOS</span>
             </h2>
-            <p className="text-muted-foreground text-center text-sm mb-10 font-medium">
-              Chega de estudar por horas e esquecer tudo depois. Agora você aprende visualmente e revisa em minutos.
-            </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               {[
-                { icon: Zap, title: "APRENDA MAIS RÁPIDO", text: "Visualize mecanismos de ação e memorize medicamentos sem precisar decorar páginas enormes." },
-                { icon: Clock, title: "REVISE EM MINUTOS", text: "Ideal para revisar antes da prova, plantão ou estágio sem perder tempo." },
-                { icon: Target, title: "ESTUDE COM MAIS CLAREZA", text: "Os conteúdos são organizados de forma simples e intuitiva para facilitar o entendimento." },
-                { icon: Brain, title: "MENOS CONFUSÃO", text: "Pare de misturar nomes, classes e indicações clínicas durante os estudos." },
-                { icon: Shield, title: "MAIS SEGURANÇA", text: "Chegue nas provas sabendo exatamente como cada medicamento funciona." },
-                { icon: Target, title: "FOCO NO QUE IMPORTA", text: "Sem enrolação, sem textos gigantes e sem teoria desnecessária." }
+                { icon: Zap, title: "APRENDA MAIS RÁPIDO", text: "Mecanismos de ação sem decorar páginas inteiras." },
+                { icon: Clock, title: "REVISE EM MINUTOS", text: "Prova, plantão ou estágio — revisão rápida onde precisar." },
+                { icon: Target, title: "MAIS CLAREZA", text: "Conteúdo simples, visual e direto ao ponto." },
+                { icon: Brain, title: "MENOS CONFUSÃO", text: "Pare de misturar nomes, classes e indicações." },
+                { icon: Shield, title: "MAIS SEGURANÇA", text: "Chegue nas provas sabendo cada medicamento." },
+                { icon: Target, title: "FOCO TOTAL", text: "Sem textos gigantes. Só o que importa." }
               ].map((item, i) => (
                 <div key={i} className="bg-card border border-border rounded-xl p-5 relative overflow-hidden">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mb-4">
+                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center mb-3">
                     <item.icon className="w-5 h-5 text-primary" />
                   </div>
-                  <h3 className="font-bold text-[15px] mb-2 uppercase">{item.title}</h3>
+                  <h3 className="font-bold text-[15px] mb-1.5 uppercase">{item.title}</h3>
                   <p className="text-muted-foreground text-[13px] leading-relaxed">{item.text}</p>
                 </div>
               ))}
@@ -357,14 +352,10 @@ function LandingPage() {
               <Star className="w-3.5 h-3.5 fill-current" /> RESULTADO REAL
             </div>
 
-            <h2 className="font-display text-4xl font-black leading-none uppercase mb-4">
+            <h2 className="font-display text-4xl font-black leading-none uppercase mb-6">
               VOCÊ VAI SENTIR A <br/>
               <span className="underline decoration-primary decoration-4 underline-offset-4">DIFERENÇA LOGO NOS PRIMEIROS ESTUDOS</span>
             </h2>
-
-            <p className="text-muted-foreground text-sm italic font-medium mb-8">
-              "Imagine chegar na prova e lembrar de cada detalhe estudado com mais clareza, rapidez e confiança."
-            </p>
 
             <ul className="space-y-4 mb-8">
               {[
@@ -401,9 +392,17 @@ function LandingPage() {
               <span className="underline decoration-white decoration-4 underline-offset-4">ESQUECER TUDO</span>
             </h2>
 
-            <p className="text-[15px] font-medium leading-relaxed mb-8 opacity-90">
-              Você passa horas lendo farmacologia, tenta decorar nomes impossíveis, revisa inúmeras vezes… e mesmo assim chega na prova sentindo que não lembra de nada. O problema não é sua capacidade. O problema é estudar da forma errada. Seu cérebro aprende muito mais rápido quando o conteúdo é visual, organizado e resumido estrategicamente.
-            </p>
+            <div className="grid grid-cols-1 gap-2 mb-8 text-left max-w-xs mx-auto">
+              {[
+                "📚 Horas lendo. PDFs gigantes.",
+                "😤 Nomes impossíveis de decorar.",
+                "😰 Revisão sem fim, sem fixar.",
+                "🧠 Na prova… branco total.",
+              ].map((item, i) => (
+                <p key={i} className="text-sm font-semibold opacity-95 bg-white/10 rounded-lg px-4 py-2.5">{item}</p>
+              ))}
+            </div>
+            <p className="text-sm font-bold opacity-90 mb-8">O problema não é você. É a forma de estudar.</p>
 
             <CTAButton onClick={scrollToOfertas} className="!bg-[#0D0F1C] !text-primary hover:!bg-black shadow-[0_4px_14px_rgba(0,0,0,0.3)] border-2 border-[#0D0F1C]">
               QUERO MUDAR MINHA FORMA DE ESTUDAR

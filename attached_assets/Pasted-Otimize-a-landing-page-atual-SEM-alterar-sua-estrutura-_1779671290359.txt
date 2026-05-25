@@ -1,0 +1,190 @@
+Otimize a landing page atual SEM alterar sua estrutura principal.
+
+OBJETIVO:
+
+* aumentar retenção
+* reduzir fadiga mental
+* melhorar velocidade psicológica
+* deixar a página mais escaneável
+* fortalecer o hero section.
+
+IMPORTANTE:
+NÃO reconstruir a página.
+NÃO deixar a página genérica.
+NÃO remover a identidade emocional atual.
+
+A página deve continuar:
+
+* moderna
+* emocional
+* visual
+* específica para farmacologia
+* feita para estudantes reais.
+
+========================
+PRIORIDADE PRINCIPAL
+====================
+
+A página atualmente possui:
+
+* texto demais
+* repetição demais
+* blocos muito longos.
+
+O objetivo é:
+
+* reduzir esforço mental
+* acelerar entendimento
+* melhorar leitura no mobile.
+
+========================
+ALTERAÇÃO 1 — HERO SECTION
+==========================
+
+Substituir o hero atual por uma versão mais emocional e rápida.
+
+Nova headline:
+
+“Farmacologia não é difícil.
+Difícil é esquecer tudo depois de horas estudando.”
+
+Subheadline:
+
+“Mapas mentais visuais criados para revisar mais rápido e memorizar farmacologia sem sofrer com PDFs gigantes.”
+
+Bullets curtos:
+
+✅ Revisão rápida antes da prova
+
+✅ Memorize visualmente
+
+✅ PDFs organizados e simples
+
+✅ Acesso imediato no celular
+
+CTA:
+
+“QUERO REVISAR MAIS RÁPIDO”
+
+Adicionar microcopy abaixo do botão:
+
+“Mais de 20 mil estudantes já usam esse material.”
+
+========================
+ALTERAÇÃO 2 — HERO VISUAL
+=========================
+
+UTILIZAR A IMAGEM ENVIADA COMO HERO PRINCIPAL DA LANDING PAGE.
+
+A imagem enviada representa exatamente a direção visual desejada:
+
+* estudante revisando farmacologia
+* ambiente real de estudos
+* celular e tablet mostrando mapas mentais
+* sensação de revisão prática
+* madrugada/véspera de prova
+* marcações reais
+* estudo visual.
+
+A imagem deve ficar em destaque logo no topo da página.
+
+Aplicar apenas pequenos ajustes visuais:
+
+* glow verde discreto
+* contraste leve
+* profundidade suave
+* responsividade mobile.
+
+NÃO transformar a imagem em:
+
+* mockup futurista
+* visual cyberpunk
+* composição exageradamente tecnológica.
+
+A sensação precisa continuar:
+
+* humana
+* prática
+* realista
+* rápida
+* identificável.
+
+========================
+ALTERAÇÃO 3 — REDUZIR TEXTOS
+============================
+
+Encurtar:
+
+* parágrafos longos
+* explicações repetitivas
+* blocos emocionais extensos.
+
+Transformar em:
+
+* frases rápidas
+* bullets
+* textos escaneáveis.
+
+EXEMPLO:
+
+AO INVÉS DE:
+“Você passa horas lendo farmacologia…”
+
+USAR:
+“Horas estudando.
+PDFs gigantes.
+E na prova… branco total.”
+
+========================
+ALTERAÇÃO 4 — REDUZIR REPETIÇÕES
+================================
+
+A página repete muitas vezes:
+
+* esquecer tudo
+* PDFs gigantes
+* revisão rápida
+* memorização.
+
+Manter os conceitos.
+Mas falar menos vezes.
+
+========================
+ALTERAÇÃO 5 — MAIS RESPIRO VISUAL
+=================================
+
+Adicionar:
+
+* mais espaçamento
+* mais divisões visuais
+* menos blocos densos
+* leitura mais leve.
+
+========================
+ALTERAÇÃO 6 — MANTER IDENTIDADE
+===============================
+
+IMPORTANTE:
+A página NÃO deve parecer:
+
+* landing page genérica
+* ebook comum
+* copy robótica.
+
+Ela deve continuar:
+
+* emocional
+* específica
+* humana
+* moderna
+* visual.
+
+========================
+OBJETIVO FINAL
+==============
+
+A pessoa deve entrar na página e sentir:
+
+“isso vai facilitar minha revisão imediatamente.”
+
+SEM precisar ler grandes blocos de texto.
