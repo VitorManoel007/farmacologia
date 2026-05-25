@@ -1,9 +1,9 @@
-import { useEffect, useRef, useState } from "react";
-import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
+import { useEffect, useState } from "react";
+import { Switch, Route, Router as WouterRouter } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { initPixel, trackPageView, trackInitiateCheckout, trackPurchase } from "@/lib/metaPixel";
+import { initPixel, trackInitiateCheckout, usePixelTracking } from "@/lib/metaPixel";
 import { motion } from "framer-motion";
 import { Check, Lock, Mail, CreditCard, Star, AlertTriangle, Zap, Clock, Target, Brain, Shield } from "lucide-react";
 import {
@@ -665,32 +665,6 @@ function NotFound() {
   );
 }
 
-// ─── Hook: SPA tracking simples com Wouter ───────────────────────────────────
-// PageView inicial já disparado pelo index.html de forma síncrona.
-// Este hook dispara PageView apenas em navegações subsequentes (SPA).
-// Purchase é verificado em toda rota, incluindo carregamento direto em /obrigado.
-function usePixelTracking() {
-  const [location] = useLocation();
-  const isFirstRender = useRef(true);
-
-  useEffect(() => {
-    if (isFirstRender.current) {
-      isFirstRender.current = false;
-      if (/obrigado|success|purchase/i.test(location)) {
-        const params = new URLSearchParams(window.location.search);
-        const raw = params.get("value") ?? params.get("valor") ?? "0";
-        trackPurchase(parseFloat(raw) || 0);
-      }
-      return;
-    }
-    trackPageView();
-    if (/obrigado|success|purchase/i.test(location)) {
-      const params = new URLSearchParams(window.location.search);
-      const raw = params.get("value") ?? params.get("valor") ?? "0";
-      trackPurchase(parseFloat(raw) || 0);
-    }
-  }, [location]);
-}
 
 function App() {
   useEffect(() => {
