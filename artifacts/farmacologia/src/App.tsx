@@ -389,7 +389,6 @@ function LandingPage() {
         <section id="ofertas" className="px-6 py-14 bg-background">
           <FadeIn>
             <div className="text-center mb-10">
-              <CountdownTimer />
               <h2 className="font-display text-5xl font-black leading-none uppercase mb-3">
                 ESCOLHA O MELHOR <br/>
                 <span className="text-primary">PLANO PARA VOCÊ</span>
