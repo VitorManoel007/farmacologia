@@ -1,0 +1,273 @@
+Melhore a landing page atual do projeto de farmacologia visual SEM reconstruir tudo do zero.
+
+OBJETIVO:
+Aumentar conversão emocionalmente.
+
+A página deve vender:
+
+* alívio
+* revisão rápida
+* facilidade
+* memorização prática
+* menos sofrimento estudando farmacologia.
+
+IMPORTANTE:
+Essa NÃO deve parecer:
+
+* plataforma premium complexa
+* software futurista
+* startup tecnológica
+* sistema complicado.
+
+A página deve parecer:
+
+* simples
+* prática
+* rápida
+* útil
+* criada para estudantes reais.
+
+SENSAÇÃO PRINCIPAL:
+“Finalmente achei um jeito mais fácil de revisar farmacologia.”
+
+========================
+ALTERAÇÃO 1 — HERO SECTION
+==========================
+
+Substituir a headline principal por:
+
+“Você passa horas estudando farmacologia…
+e mesmo assim esquece tudo na prova?”
+
+Subheadline:
+
+“Mapas mentais visuais para revisar mais rápido, memorizar melhor e parar de sofrer com PDFs gigantes.”
+
+Adicionar bullets simples:
+
+✅ Revisão rápida antes da prova
+
+✅ Mais clareza para memorizar fármacos
+
+✅ Pare de se perder em PDFs cansativos
+
+✅ Estude visualmente e memorize mais rápido
+
+CTA principal:
+
+“QUERO REVISAR MAIS RÁPIDO”
+
+IMPORTANTE:
+A seção hero precisa transmitir:
+
+* facilidade
+* rapidez
+* praticidade
+* alívio.
+
+E NÃO:
+
+* complexidade
+* tecnologia exagerada
+* aparência corporativa.
+
+========================
+ALTERAÇÃO 2 — VISUAL DO TOPO
+============================
+
+Melhorar o topo da página sem exagerar no visual futurista.
+
+USAR:
+
+* dark mode suave
+* glow verde discreto
+* visual moderno
+* contraste limpo.
+
+NÃO usar:
+
+* excesso de efeitos tecnológicos
+* aparência de software complexo
+* interface futurista exagerada.
+
+Adicionar:
+
+* mockup simples
+* celular mostrando mapas mentais
+* tablet com revisão organizada
+* zoom nos mapas
+* destaque visual nos conteúdos.
+
+Adicionar composição visual:
+
+Lado esquerdo:
+
+* PDFs bagunçados
+* estudante cansado
+* excesso de texto.
+
+Lado direito:
+
+* mapas organizados
+* revisão rápida
+* visual limpo
+* sensação de clareza.
+
+Texto visual:
+“Do caos para revisão rápida.”
+
+========================
+ALTERAÇÃO 3 — IDENTIFICAÇÃO
+===========================
+
+Subir a parte emocional para mais perto do topo.
+
+Adicionar headline:
+
+“Você não está cansado de estudar…
+está cansado de esquecer tudo.”
+
+Criar cards simples com dores reais:
+
+* PDFs gigantes
+* Revisão demorada
+* Ansiedade antes da prova
+* Muito conteúdo
+* Nomes difíceis de decorar.
+
+Visual:
+
+* moderno
+* limpo
+* jovem
+* simples.
+
+========================
+ALTERAÇÃO 4 — MOSTRAR O MATERIAL MAIS RÁPIDO
+============================================
+
+Trazer os mapas mentais para cima da página.
+
+Mostrar:
+
+* zoom nos conteúdos
+* exemplos reais
+* organização visual
+* facilidade para revisar.
+
+IMPORTANTE:
+Os mapas devem parecer:
+
+* rápidos de usar
+* fáceis de entender
+* práticos para revisão.
+
+========================
+ALTERAÇÃO 5 — TRANSFORMAÇÃO
+===========================
+
+Criar seção simples de:
+ANTES x DEPOIS.
+
+ANTES:
+
+* PDFs cansativos
+* horas revisando
+* confusão
+* ansiedade.
+
+DEPOIS:
+
+* revisão rápida
+* organização
+* clareza
+* memorização mais fácil.
+
+Visual:
+
+* simples
+* direto
+* emocional.
+
+========================
+ALTERAÇÃO 6 — PROVA SOCIAL
+==========================
+
+Melhorar os depoimentos.
+
+Criar visual estilo:
+
+* WhatsApp
+* comentários reais
+* feedback humano.
+
+Exemplos:
+“Consegui revisar antibióticos muito mais rápido.”
+
+“Finalmente consegui entender farmacologia sem surtar.”
+
+“Usei antes da prova e ajudou demais.”
+
+A seção deve parecer:
+
+* real
+* humana
+* espontânea.
+
+========================
+ALTERAÇÃO 7 — OFERTA
+====================
+
+A oferta deve parecer:
+
+* acessível
+* útil
+* impulsiva
+* fácil de comprar.
+
+Adicionar:
+
+* preço antigo riscado
+* acesso imediato
+* atualizações inclusas
+* garantia simples.
+
+CTA:
+
+“LIBERAR MEU ACESSO”
+
+========================
+ALTERAÇÃO 8 — MICRO ANIMAÇÕES
+=============================
+
+Adicionar apenas animações suaves:
+
+* hover leve
+* transições simples
+* glow discreto.
+
+Sem exagero.
+
+========================
+ESTILO GERAL
+============
+
+A página deve parecer:
+
+* moderna
+* visual
+* jovem
+* prática
+* rápida.
+
+NÃO deve parecer:
+
+* acadêmica
+* corporativa
+* sofisticada demais
+* complexa.
+
+FOCO PRINCIPAL:
+fazer o estudante pensar:
+
+“isso vai facilitar minha vida imediatamente.”

@@ -118,46 +118,98 @@ function LandingPage() {
         </div>
 
         {/* BLOCO 01 — HERO */}
-        <section className="px-6 pt-10 pb-12 bg-background relative">
+        <section className="px-6 pt-10 pb-12 bg-background relative overflow-hidden">
+          {/* Subtle glow background */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-72 h-72 rounded-full bg-primary/5 blur-3xl pointer-events-none" />
+          
           <FadeIn>
-            <h1 className="font-display text-5xl sm:text-6xl font-black leading-[0.95] uppercase mb-6">
-              +110 PÁGINAS DE <br/>
-              <span className="text-primary block">MAPAS MENTAIS</span>
-              PARA VOCÊ <br/>
-              <span className="text-primary block">MEMORIZAR FARMACOLOGIA</span>
-              DE FORMA <br/>
-              <span className="text-primary block">PRÁTICA, VISUAL E RÁPIDA</span>
+            <h1 className="font-display text-4xl sm:text-5xl font-black leading-[1.05] mb-5">
+              Você passa horas estudando farmacologia…
+              <span className="text-primary block mt-1">e mesmo assim esquece tudo na prova?</span>
             </h1>
-            
-            <p className="text-muted-foreground text-[15px] leading-relaxed mb-8">
-              Pare de perder horas lendo PDFs confusos e esquecendo tudo na prova. Aprenda farmacologia através de mapas mentais organizados visualmente para acelerar sua memorização e facilitar sua revisão clínica.
+
+            <p className="text-muted-foreground text-[15px] leading-relaxed mb-7">
+              Mapas mentais visuais para revisar mais rápido, memorizar melhor e parar de sofrer com PDFs gigantes.
             </p>
 
             <div className="space-y-3 mb-8">
               {[
-                "Organizado por classes farmacológicas",
-                "Revisão rápida antes das provas",
-                "Conteúdo visual e objetivo",
-                "Ideal para medicina, enfermagem e áreas da saúde"
+                "Revisão rápida antes da prova",
+                "Mais clareza para memorizar fármacos",
+                "Pare de se perder em PDFs cansativos",
+                "Estude visualmente e memorize mais rápido"
               ].map((benefit, i) => (
-                <div key={i} className="flex items-start gap-2.5">
-                  <CheckCircle2 className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, x: -10 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  className="flex items-start gap-2.5"
+                >
+                  <span className="text-base shrink-0">✅</span>
                   <span className="text-sm font-medium">{benefit}</span>
-                </div>
+                </motion.div>
               ))}
             </div>
 
             <div className="w-full mb-8 flex items-center justify-center">
-              <img src={heroImg} alt="Mockup do material" className="w-full max-w-[380px] object-contain drop-shadow-2xl" />
+              <motion.img
+                src={heroImg}
+                alt="Mockup do material"
+                className="w-full max-w-[380px] object-contain drop-shadow-2xl"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+              />
             </div>
 
-            <div className="bg-secondary/50 rounded-lg p-4 mb-6 flex items-start gap-3 border border-border">
+            <CTAButton onClick={scrollToOfertas}>QUERO REVISAR MAIS RÁPIDO</CTAButton>
+
+            <div className="bg-secondary/50 rounded-lg p-4 mt-5 flex items-start gap-3 border border-border">
               <Mail className="w-5 h-5 text-primary shrink-0 mt-0.5" />
               <p className="text-xs text-muted-foreground font-medium leading-relaxed">
                 Receba todos os materiais no mesmo dia diretamente no seu Gmail após a compra.
               </p>
             </div>
+          </FadeIn>
+        </section>
 
+        {/* BLOCO 01B — IDENTIFICAÇÃO (pain cards) */}
+        <section className="px-6 py-12 bg-[#0A0C16]">
+          <FadeIn>
+            <h2 className="font-display text-3xl sm:text-4xl font-black leading-[1.1] mb-8">
+              Você não está cansado de estudar…
+              <span className="text-destructive block mt-1">está cansado de esquecer tudo.</span>
+            </h2>
+
+            <div className="grid grid-cols-1 gap-3">
+              {[
+                { emoji: "📄", pain: "PDFs gigantes sem fim" },
+                { emoji: "⏳", pain: "Revisão que leva horas" },
+                { emoji: "😰", pain: "Ansiedade na véspera da prova" },
+                { emoji: "🤯", pain: "Conteúdo demais pra decorar" },
+                { emoji: "💊", pain: "Nomes de fármacos impossíveis" },
+              ].map((item, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.35, delay: i * 0.07 }}
+                  whileHover={{ scale: 1.02, borderColor: "rgba(182,255,59,0.3)" }}
+                  className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3 cursor-default transition-colors"
+                >
+                  <span className="text-2xl shrink-0">{item.emoji}</span>
+                  <span className="text-sm font-semibold text-white">{item.pain}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            <div className="mt-8 rounded-xl bg-primary/10 border border-primary/30 px-5 py-4 text-center">
+              <p className="text-primary font-black text-[15px] leading-snug">
+                "Finalmente achei um jeito mais fácil de revisar farmacologia."
+              </p>
+            </div>
           </FadeIn>
         </section>
 
@@ -407,17 +459,17 @@ function LandingPage() {
 
                 {/* Preço abaixo dos benefícios em verde */}
                 <div className="border-t border-border pt-5 mb-6 text-center">
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">Apenas</p>
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">De <span className="line-through text-gray-500">R$ 47,00</span> por apenas</p>
                   <div className="flex items-end justify-center gap-1">
                     <span className="text-xl font-bold text-primary">R$</span>
                     <span className="font-display text-6xl font-black leading-none text-primary">10,00</span>
                   </div>
-                  <p className="text-xs font-medium text-muted-foreground mt-1">Pagamento único • Acesso imediato</p>
+                  <p className="text-xs font-medium text-muted-foreground mt-1">Pagamento único • Acesso imediato • Atualizações inclusas</p>
                 </div>
 
                 <a href="https://pay.cakto.com.br/3asoehq_887420" target="_blank" rel="noopener noreferrer" className="block">
                   <Button className="w-full bg-secondary hover:bg-secondary/80 text-white font-bold min-h-14 h-auto py-4 rounded-xl uppercase tracking-wide border border-border whitespace-normal leading-tight text-center">
-                    GARANTIR COMBO ESSENCIAL
+                    LIBERAR MEU ACESSO
                   </Button>
                 </a>
               </div>
@@ -466,52 +518,60 @@ function LandingPage() {
 
                 {/* Preço após benefícios */}
                 <div className="border-t border-border pt-5 mb-6 text-center">
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">Apenas</p>
+                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider mb-1">De <span className="line-through text-gray-500">R$ 97,00</span> por apenas</p>
                   <div className="flex items-end justify-center gap-1">
                     <span className="text-xl font-bold text-primary">R$</span>
                     <span className="font-display text-6xl font-black leading-none text-primary">25,00</span>
                   </div>
-                  <p className="text-xs font-medium text-muted-foreground mt-1">Pagamento único • Acesso imediato</p>
+                  <p className="text-xs font-medium text-muted-foreground mt-1">Pagamento único • Acesso imediato • Atualizações inclusas</p>
                 </div>
 
                 <a href="https://pay.cakto.com.br/ers4bn6_887486" target="_blank" rel="noopener noreferrer" className="block">
-                  <CTAButton>GARANTIR COMBO COMPLETO</CTAButton>
+                  <CTAButton>LIBERAR MEU ACESSO COMPLETO</CTAButton>
                 </a>
               </div>
             </div>
           </FadeIn>
         </section>
 
-        {/* BLOCO 08 — FEEDBACKS (white bg) */}
-        <section className="px-6 py-14 bg-white text-[#0D0F1C]">
+        {/* BLOCO 08 — FEEDBACKS (white bg) — WhatsApp style */}
+        <section className="px-4 py-14 bg-[#0A0C16]">
           <FadeIn>
-            <h2 className="font-display text-4xl sm:text-5xl font-black leading-[0.95] uppercase mb-10 text-center">
-              MAIS DE <span className="text-primary drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)]">20 MIL ESTUDANTES</span> <br/>
-              JÁ UTILIZAM ESSE MATERIAL
+            <h2 className="font-display text-4xl sm:text-5xl font-black leading-[0.95] uppercase mb-2 text-center text-white">
+              O QUE ESTÃO <span className="text-primary">FALANDO</span>
             </h2>
+            <p className="text-center text-muted-foreground text-sm mb-8 font-medium">Mais de 20 mil estudantes já utilizam esse material</p>
 
-            <div className="grid grid-cols-1 gap-4">
+            {/* WhatsApp-style chat bubbles */}
+            <div className="flex flex-col gap-4">
               {[
-                { name: "Amanda Ferreira", text: "Gente, eu tava travada em farmaco há meses. Comprei sem muita expectativa e me surpreendi. Os mapas são bem completos e visuais, dá pra revisar um med em poucos minutos. Valeu cada centavo.", img: testimonialImg1 },
-                { name: "Mayara Souza", text: "Usei na véspera da prova de farmacologia clínica e fui muito melhor do que esperava. Consegui lembrar de mecanismo de ação, efeitos adversos, tudo. Antes ficava só lendo e esquecia no dia seguinte.", img: testimonialImg2 },
-                { name: "Camila Ramos", text: "Nunca achei que ia gostar de farmaco, mas com esse material ficou mais fácil de entender. Os mapas organizam o conteúdo de um jeito que faz sentido. Já recomendei pra toda a minha turma.", img: testimonialImg3 },
-                { name: "Priscila Alves", text: "Uso pra revisar antes dos plantões no hospital. É rápido, prático e cabe no celular. Só no Abacavir já valeu, que era o que eu mais confundia. Compra sem medo!", img: testimonialImg4 },
+                { name: "Amanda Ferreira", text: "Gente, consegui revisar antibióticos muito mais rápido com esses mapas 😮 nunca pensei que ia ser tão visual", img: testimonialImg1, time: "19:42" },
+                { name: "Mayara Souza", text: "Usei antes da prova e ajudou demais!! Lembrei de mecanismo de ação, efeitos adversos, tudo 🙏", img: testimonialImg2, time: "21:15" },
+                { name: "Camila Ramos", text: "Finalmente consegui entender farmacologia sem surtar kkkkk recomendo pra todo mundo da turma", img: testimonialImg3, time: "09:03" },
+                { name: "Priscila Alves", text: "Uso nos plantões no hospital. Rápido, prático, cabe no celular. Compra sem medo! 💊", img: testimonialImg4, time: "14:27" },
               ].map((t, i) => (
-                <div key={i} className="bg-gray-50 border border-gray-200 rounded-xl p-5 shadow-sm">
-                  <div className="flex items-center gap-3 mb-3">
-                    <img src={t.img} alt={t.name} className="w-11 h-11 rounded-full object-cover object-top shrink-0 border-2 border-gray-200" />
-                    <div>
-                      <p className="text-sm font-bold text-gray-800">{t.name}</p>
-                      <div className="flex gap-0.5 mt-0.5">
-                        {[...Array(5)].map((_, j) => (
-                          <Star key={j} className="w-3.5 h-3.5 fill-[#0D0F1C] text-[#0D0F1C]" />
-                        ))}
-                      </div>
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: i * 0.1 }}
+                  className="flex items-end gap-2"
+                >
+                  <img src={t.img} alt={t.name} className="w-9 h-9 rounded-full object-cover object-top shrink-0 border-2 border-[#2a2d3a]" />
+                  <div className="flex-1 max-w-[85%]">
+                    <p className="text-[10px] font-bold text-primary mb-1 ml-1">{t.name}</p>
+                    <div className="bg-[#1e2030] rounded-2xl rounded-bl-sm px-4 py-3 shadow-md border border-[#2a2d3a]">
+                      <p className="text-sm text-white leading-relaxed">{t.text}</p>
+                      <p className="text-[10px] text-gray-500 mt-1.5 text-right">{t.time} ✓✓</p>
                     </div>
                   </div>
-                  <p className="text-sm font-medium leading-relaxed italic text-gray-700">"{t.text}"</p>
-                </div>
+                </motion.div>
               ))}
+            </div>
+
+            <div className="mt-8">
+              <CTAButton onClick={scrollToOfertas}>QUERO ESTUDAR ASSIM TAMBÉM</CTAButton>
             </div>
           </FadeIn>
         </section>
