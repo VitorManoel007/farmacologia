@@ -27,7 +27,7 @@ import garantiaImg from "@assets/ea2f6b28975c2ded20e94d7e88c8db5f-Photoroom_1778
 import comboCompletoImg from "@assets/magnific_quero-que-voce-mude-o-ult_2989036019-Photoroom_1778949609656.png";
 import comboEssencialImg from "@assets/magnific__quero-que-pague-o-elemento-principal-e-retiro-que-___1778949793083.png";
 import whatsappLidia from "@assets/IMG_1883-ezremove_1779676478637.png";
-import whatsappRafaela from "@assets/IMG_1881-ezremove_1779676478637.png";
+import whatsappRafaela from "@assets/WhatsApp_Image_2026-05-25_at_10.08.45-ezremove_1779714798107.png";
 import whatsappAlicia from "@assets/IMG_1885-ezremove_1779676478637.png";
 import painImgMedicamentos from "@assets/5-Photoroom_1779712544475.png";
 import painImgCansado from "@assets/2-Photoroom_1779712544476.png";
