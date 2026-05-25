@@ -1,45 +1,40 @@
-// ─────────────────────────────────────────────────────────────────────────────
 // Meta Pixel — Implementação simples e estável
 // Pixel ID: 993672840078117
-// ─────────────────────────────────────────────────────────────────────────────
 
 declare global {
   interface Window {
     fbq: (...args: unknown[]) => void;
-    _fbq: unknown;
   }
 }
 
-// PageView — dispara no carregamento e em cada troca de rota SPA
 export function trackPageView(): void {
-  if (typeof window.fbq !== "function") return;
+  console.log("MetaPixel: PageView fired");
+  if (typeof window.fbq === "undefined") return;
   window.fbq("track", "PageView");
 }
 
-// InitiateCheckout — chamado via onClick nos botões de compra
 export function trackInitiateCheckout(): void {
-  if (typeof window.fbq !== "function") return;
-  window.fbq("track", "InitiateCheckout", { currency: "BRL" });
+  console.log("MetaPixel: InitiateCheckout fired");
+  if (typeof window.fbq === "undefined") return;
+  window.fbq("track", "InitiateCheckout");
 }
 
-// Purchase — chamado quando a URL indica página de obrigado/sucesso
-export function trackPurchase(value: number): void {
-  if (typeof window.fbq !== "function") return;
-  window.fbq("track", "Purchase", { value, currency: "BRL" });
+export function trackPurchase(value: number = 0): void {
+  console.log("MetaPixel: Purchase fired", value);
+  if (typeof window.fbq === "undefined") return;
+  window.fbq("track", "Purchase", { currency: "BRL", value });
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
 // COMO ADICIONAR NOVOS EVENTOS:
-//   export function trackViewContent(): void {
-//     if (typeof window.fbq !== "function") return;
-//     window.fbq("track", "ViewContent", { currency: "BRL" });
-//   }
+//   import { trackViewContent } from "@/lib/metaPixel";
+//   window.fbq("track", "ViewContent");
 //
-// COMO TESTAR NO META EVENTS MANAGER:
+// COMO TESTAR:
 //   1. Instale "Meta Pixel Helper" no Chrome
-//   2. Acesse a URL publicada (não o preview do Replit)
-//   3. PageView    → aparece ao carregar qualquer página
-//   4. InitiateCheckout → clique em "LIBERAR MEU ACESSO" ou "LIBERAR MEU ACESSO COMPLETO"
-//   5. Purchase    → acesse uma URL com "obrigado", "success" ou "purchase"
-//      Ex: https://seusite.com/obrigado?value=10
+//   2. Acesse a URL publicada
+//   3. Abra o console — os logs confirmam se as funções executam
+//   4. PageView    → ao carregar/navegar
+//   5. InitiateCheckout → ao clicar em LIBERAR MEU ACESSO
+//   6. Purchase    → acesse a URL com /obrigado?value=10
 // ─────────────────────────────────────────────────────────────────────────────

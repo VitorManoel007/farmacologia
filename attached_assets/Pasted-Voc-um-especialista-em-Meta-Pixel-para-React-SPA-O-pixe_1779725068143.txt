@@ -1,0 +1,213 @@
+Você é um especialista em Meta Pixel para React SPA.
+
+O pixel já está carregando corretamente, porém os eventos NÃO estão sendo disparados.
+
+OBJETIVO:
+Corrigir DEFINITIVAMENTE os eventos do Meta Pixel em um projeto:
+
+* React
+* TypeScript
+* Wouter
+* SPA
+* Replit
+
+PIXEL ID:
+
+993672840078117
+
+========================
+PROBLEMA ATUAL
+==============
+
+O Meta Pixel aparece instalado corretamente.
+
+Porém:
+
+* PageView não aparece
+* InitiateCheckout não aparece
+* Purchase não aparece
+
+Provavelmente:
+
+* funções não estão sendo chamadas
+* SPA tracking falhou
+* onClick incorreto
+* fbq disparando antes de carregar.
+
+========================
+OBJETIVO
+========
+
+Criar uma implementação:
+
+* extremamente simples
+* estável
+* profissional
+* compatível com React SPA.
+
+SEM:
+
+* engenharia excessiva
+* automações complexas
+* listeners globais pesados
+* deduplicação avançada.
+
+========================
+IMPLEMENTAÇÃO
+=============
+
+Criar arquivo:
+
+src/lib/metaPixel.ts
+
+Implementar APENAS:
+
+* initPixel()
+* trackPageView()
+* trackInitiateCheckout()
+* trackPurchase()
+
+========================
+META PIXEL
+==========
+
+Adicionar o Meta Pixel oficial corretamente utilizando:
+
+993672840078117
+
+Garantir:
+
+* fbq disponível globalmente
+* carregamento correto
+* compatível com SPA.
+
+========================
+FUNÇÕES
+=======
+
+As funções devem ser SIMPLES.
+
+EXEMPLO:
+
+trackPageView():
+
+window.fbq('track', 'PageView')
+
+trackInitiateCheckout():
+
+window.fbq('track', 'InitiateCheckout')
+
+trackPurchase():
+
+window.fbq('track', 'Purchase', {
+currency: 'BRL',
+value
+})
+
+========================
+IMPORTANTE
+==========
+
+Antes de disparar qualquer evento:
+
+validar:
+
+if (typeof window.fbq !== 'undefined')
+
+========================
+PAGEVIEW SPA
+============
+
+Implementar rastreamento correto para Wouter SPA.
+
+No App.tsx:
+
+* iniciar pixel apenas UMA vez
+* rastrear troca de rota corretamente.
+
+Usar:
+
+useEffect(() => {
+trackPageView()
+}, [location])
+
+========================
+INITIATE CHECKOUT
+=================
+
+Corrigir TODOS os botões de compra.
+
+IMPORTANTE:
+Usar:
+
+onClick={() => trackInitiateCheckout()}
+
+NÃO usar:
+
+onClick={trackInitiateCheckout()}
+
+Aplicar nos botões:
+
+* GARANTIR COMBO ESSENCIAL
+* GARANTIR COMBO COMPLETO
+* LIBERAR MEU ACESSO
+* LIBERAR MEU ACESSO COMPLETO
+
+========================
+PURCHASE
+========
+
+Disparar Purchase apenas:
+
+* na página de obrigado
+* success
+* purchase.
+
+========================
+DEBUG
+=====
+
+Adicionar logs temporários:
+
+console.log('PageView fired')
+console.log('InitiateCheckout fired')
+console.log('Purchase fired')
+
+Para validar se as funções realmente executam.
+
+========================
+VALIDAÇÃO
+=========
+
+Garantir funcionamento no:
+
+* Meta Events Manager
+* React Strict Mode
+* mobile
+* produção
+* deploy Replit.
+
+========================
+NÃO IMPLEMENTAR
+===============
+
+NÃO usar:
+
+* deduplicação avançada
+* listeners globais
+* automações pesadas
+* anti-spam
+* engenharia enterprise
+* tracking complexo.
+
+========================
+OBJETIVO FINAL
+==============
+
+Fazer os eventos:
+
+* aparecerem corretamente
+* dispararem corretamente
+* funcionarem em SPA React
+* funcionarem no Meta Events Manager
+* sem quebrar o pixel.
