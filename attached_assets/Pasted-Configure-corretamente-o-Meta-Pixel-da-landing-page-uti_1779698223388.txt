@@ -1,0 +1,204 @@
+Configure corretamente o Meta Pixel da landing page utilizando o Pixel ID:
+
+993672840078117
+
+OBJETIVO:
+Criar uma implementação PROFISSIONAL, LEVE e CORRETA do Meta Pixel para campanhas de conversão no Meta Ads.
+
+A implementação deve:
+
+* rastrear corretamente os eventos principais
+* evitar duplicação
+* funcionar perfeitamente no mobile
+* manter carregamento rápido
+* ser otimizada para performance.
+
+IMPORTANTE:
+NÃO adicionar scripts desnecessários.
+NÃO usar bibliotecas pesadas.
+NÃO implementar eventos duplicados.
+NÃO prejudicar velocidade da landing page.
+
+========================
+CONFIGURAÇÃO PRINCIPAL
+======================
+
+Adicionar o Meta Pixel oficial utilizando o Pixel ID:
+
+993672840078117
+
+Implementar corretamente:
+
+* fbq('init')
+* fbq('track')
+* carregamento assíncrono
+* fallback noscript.
+
+Garantir:
+
+* compatibilidade mobile
+* carregamento rápido
+* renderização leve.
+
+========================
+EVENTO 1 — PAGEVIEW
+===================
+
+Disparar automaticamente o evento:
+
+PageView
+
+Quando:
+
+* a landing page carregar completamente.
+
+Objetivo:
+
+* rastrear visitantes
+* alimentar públicos
+* otimizar campanhas.
+
+IMPORTANTE:
+O evento deve disparar:
+
+* apenas uma vez
+* sem duplicação
+* sem conflitos.
+
+========================
+EVENTO 2 — INITIATECHECKOUT
+===========================
+
+Disparar o evento:
+
+InitiateCheckout
+
+Sempre que o usuário clicar em qualquer botão principal de CTA.
+
+APLICAR NOS BOTÕES:
+
+* QUERO REVISAR MAIS RÁPIDO
+* QUERO MEMORIZAR MAIS RÁPIDO
+* LIBERAR MEU ACESSO
+* LIBERAR MEU ACESSO COMPLETO
+* GARANTIR MEU ACESSO AGORA
+* QUERO MUDAR MINHA FORMA DE ESTUDAR
+* QUERO ESTUDAR ASSIM
+* QUERO ACESSO IMEDIATO
+
+IMPORTANTE:
+
+* evento deve disparar apenas uma vez por clique
+* evitar múltiplos triggers
+* rastrear corretamente em desktop e mobile.
+
+========================
+EVENTO 3 — PURCHASE
+===================
+
+Disparar o evento:
+
+Purchase
+
+APENAS:
+
+* após compra aprovada
+* na página de obrigado/sucesso.
+
+Adicionar parâmetros:
+
+currency: 'BRL'
+
+Adicionar value dinâmico conforme o plano comprado.
+
+========================
+VALORES
+=======
+
+PLANO ESSENCIAL:
+value: 10.00
+
+PLANO COMPLETO:
+value: 25.00
+
+========================
+IMPLEMENTAÇÃO TÉCNICA
+=====================
+
+Utilizar:
+
+* JavaScript puro
+* Meta Pixel oficial
+* código limpo
+* implementação leve.
+
+Aplicar:
+
+* async
+* defer
+* carregamento otimizado.
+
+========================
+PERFORMANCE
+===========
+
+Garantir:
+
+* carregamento rápido da página
+* baixo consumo de recursos
+* scripts mínimos
+* sem impacto negativo no mobile.
+
+Reduzir:
+
+* peso JS
+* render blocking
+* chamadas desnecessárias.
+
+========================
+VALIDAÇÃO
+=========
+
+Verificar no Meta Events Manager:
+
+* PageView funcionando
+* InitiateCheckout funcionando
+* Purchase funcionando
+* sem eventos duplicados
+* sem warning/error.
+
+Garantir:
+
+* rastreamento correto
+* estabilidade
+* precisão dos eventos.
+
+========================
+IMPORTANTE
+==========
+
+A implementação deve parecer:
+
+* profissional
+* otimizada
+* escalável
+* preparada para campanhas de conversão.
+
+SEM:
+
+* scripts desnecessários
+* códigos redundantes
+* eventos duplicados
+* bibliotecas pesadas.
+
+========================
+OBJETIVO FINAL
+==============
+
+Criar uma configuração de pixel:
+
+* rápida
+* leve
+* confiável
+* perfeita para Meta Ads
+* pronta para escalar campanhas de conversão.
