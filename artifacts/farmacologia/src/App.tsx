@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 
-import heroImg from "@assets/magnific__criar-mockup-simples-e-altamente-conversor-para-um___1779671297483.png";
+import heroImg from "@assets/magnific__quero-que-crie-uma-imagem-muito-parecida-img1-s-qu___1779676683806.png";
 import carouselImg1 from "@assets/Captura_de_tela_2026-05-15_110029_1778947984603.png";
 import carouselImg2 from "@assets/Captura_de_tela_2026-05-15_110103_1778947984604.png";
 import carouselImg3 from "@assets/Captura_de_tela_2026-05-15_110126_1778947984604.png";
