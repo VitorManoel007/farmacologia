@@ -30,6 +30,9 @@ import testimonialImg1 from "@assets/63b82082514d9837a3df276e1b356bba_1778950811
 import testimonialImg2 from "@assets/baixados_1778950811652.png";
 import testimonialImg3 from "@assets/346e0250a7bd4237d89e210dd9f60c71_1778950811653.jpg";
 import testimonialImg4 from "@assets/917467dffbdfecc9d25e166ccfb23d6b_1778950811653.jpg";
+import whatsappLidia from "@assets/IMG_1883_1779676062654.PNG";
+import whatsappRafaela from "@assets/IMG_1881_1779676062654.PNG";
+import whatsappAlicia from "@assets/IMG_1885_1779676062654.PNG";
 import resultsImg from "@assets/Captura_de_tela_2026-05-15_094946_1778858131817.png";
 import painImg from "@assets/Captura_de_tela_2026-05-15_095003_1778858131817.png";
 import idealImg from "@assets/Captura_de_tela_2026-05-15_095040_1778858131817.png";
@@ -523,37 +526,42 @@ function LandingPage() {
           </FadeIn>
         </section>
 
-        {/* BLOCO 08 — FEEDBACKS (white bg) — WhatsApp style */}
+        {/* BLOCO 08 — FEEDBACKS — WhatsApp screenshots reais */}
         <section className="px-4 py-14 bg-[#0A0C16]">
           <FadeIn>
             <h2 className="font-display text-4xl sm:text-5xl font-black leading-[0.95] uppercase mb-2 text-center text-white">
               O QUE ESTÃO <span className="text-primary">FALANDO</span>
             </h2>
-            <p className="text-center text-muted-foreground text-sm mb-8 font-medium">Mais de 20 mil estudantes já utilizam esse material</p>
+            <p className="text-center text-muted-foreground text-sm mb-8 font-medium">Conversas reais de quem já comprou o material</p>
 
-            {/* WhatsApp-style chat bubbles */}
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-col gap-5">
               {[
-                { name: "Amanda Ferreira", text: "Gente, consegui revisar antibióticos muito mais rápido com esses mapas 😮 nunca pensei que ia ser tão visual", img: testimonialImg1, time: "19:42" },
-                { name: "Mayara Souza", text: "Usei antes da prova e ajudou demais!! Lembrei de mecanismo de ação, efeitos adversos, tudo 🙏", img: testimonialImg2, time: "21:15" },
-                { name: "Camila Ramos", text: "Finalmente consegui entender farmacologia sem surtar kkkkk recomendo pra todo mundo da turma", img: testimonialImg3, time: "09:03" },
-                { name: "Priscila Alves", text: "Uso nos plantões no hospital. Rápido, prático, cabe no celular. Compra sem medo! 💊", img: testimonialImg4, time: "14:27" },
+                { img: whatsappLidia, name: "Lidia", highlight: "chegou tudo certinho no gmail" },
+                { img: whatsappRafaela, name: "Rafaela", highlight: "passei nas provas finais" },
+                { img: whatsappAlicia, name: "Alicia", highlight: "passei na prova semana passada" },
               ].map((t, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 10 }}
+                  initial={{ opacity: 0, y: 16 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="flex items-end gap-2"
+                  transition={{ duration: 0.45, delay: i * 0.12 }}
+                  className="relative"
                 >
-                  <img src={t.img} alt={t.name} className="w-9 h-9 rounded-full object-cover object-top shrink-0 border-2 border-[#2a2d3a]" />
-                  <div className="flex-1 max-w-[85%]">
-                    <p className="text-[10px] font-bold text-primary mb-1 ml-1">{t.name}</p>
-                    <div className="bg-[#1e2030] rounded-2xl rounded-bl-sm px-4 py-3 shadow-md border border-[#2a2d3a]">
-                      <p className="text-sm text-white leading-relaxed">{t.text}</p>
-                      <p className="text-[10px] text-gray-500 mt-1.5 text-right">{t.time} ✓✓</p>
-                    </div>
+                  {/* Phone frame */}
+                  <div className="rounded-[24px] overflow-hidden border-[3px] border-[#2a2d3a] shadow-[0_8px_32px_rgba(0,0,0,0.5)] bg-black">
+                    <img
+                      src={t.img}
+                      alt={`Depoimento de ${t.name}`}
+                      className="w-full object-cover"
+                    />
+                  </div>
+                  {/* Label abaixo */}
+                  <div className="flex items-center justify-center gap-2 mt-2.5">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
+                    <p className="text-xs text-muted-foreground font-semibold">
+                      <span className="text-white">{t.name}</span> — {t.highlight}
+                    </p>
                   </div>
                 </motion.div>
               ))}
