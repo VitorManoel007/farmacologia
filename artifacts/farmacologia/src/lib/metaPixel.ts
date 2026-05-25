@@ -1,10 +1,54 @@
-// Meta Pixel — Implementação simples e estável
-// Pixel ID: 993672840078117
+// Meta Pixel — Pixel ID: 993672840078117
+// Inicialização 100% via TypeScript, sem nenhum script no HTML.
+
+const PIXEL_ID = "993672840078117";
 
 declare global {
   interface Window {
-    fbq: (...args: unknown[]) => void;
+    fbq: ((...args: unknown[]) => void) & {
+      callMethod?: (...args: unknown[]) => void;
+      queue: unknown[][];
+      loaded: boolean;
+      version: string;
+      push: (...args: unknown[]) => void;
+    };
+    _fbq: Window["fbq"];
   }
+}
+
+let initialized = false;
+
+export function initPixel(): void {
+  if (initialized || typeof window === "undefined") return;
+  initialized = true;
+
+  // Cria o stub fbq (mesma lógica do snippet oficial da Meta)
+  if (!window.fbq) {
+    const fbq = function (...args: unknown[]) {
+      if (fbq.callMethod) {
+        fbq.callMethod(...args);
+      } else {
+        fbq.queue.push(args);
+      }
+    } as Window["fbq"];
+
+    if (!window._fbq) window._fbq = fbq;
+    fbq.push = fbq;
+    fbq.loaded = true;
+    fbq.version = "2.0";
+    fbq.queue = [];
+    window.fbq = fbq;
+  }
+
+  // Injeta o script fbevents.js da Meta
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = "https://connect.facebook.net/en_US/fbevents.js";
+  document.head.appendChild(script);
+
+  // Init + primeiro PageView
+  window.fbq("init", PIXEL_ID);
+  window.fbq("track", "PageView");
 }
 
 export function trackPageView(): void {
@@ -21,17 +65,3 @@ export function trackPurchase(value: number = 0): void {
   if (typeof window.fbq === "undefined") return;
   window.fbq("track", "Purchase", { currency: "BRL", value });
 }
-
-// ─────────────────────────────────────────────────────────────────────────────
-// COMO ADICIONAR NOVOS EVENTOS:
-//   import { trackViewContent } from "@/lib/metaPixel";
-//   window.fbq("track", "ViewContent");
-//
-// COMO TESTAR:
-//   1. Instale "Meta Pixel Helper" no Chrome
-//   2. Acesse a URL publicada
-//   3. Abra o console — os logs confirmam se as funções executam
-//   4. PageView    → ao carregar/navegar
-//   5. InitiateCheckout → ao clicar em LIBERAR MEU ACESSO
-//   6. Purchase    → acesse a URL com /obrigado?value=10
-// ─────────────────────────────────────────────────────────────────────────────

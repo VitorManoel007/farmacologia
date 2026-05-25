@@ -3,7 +3,7 @@ import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import { trackPageView, trackInitiateCheckout, trackPurchase } from "@/lib/metaPixel";
+import { initPixel, trackPageView, trackInitiateCheckout, trackPurchase } from "@/lib/metaPixel";
 import { motion } from "framer-motion";
 import { Check, Lock, Mail, CreditCard, Star, AlertTriangle, Zap, Clock, Target, Brain, Shield } from "lucide-react";
 import {
@@ -693,6 +693,10 @@ function usePixelTracking() {
 }
 
 function App() {
+  useEffect(() => {
+    initPixel();
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
