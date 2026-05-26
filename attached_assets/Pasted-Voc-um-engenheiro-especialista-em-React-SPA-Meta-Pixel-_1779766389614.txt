@@ -1,0 +1,145 @@
+Você é um engenheiro especialista em React SPA + Meta Pixel + Cakto.
+
+IMPORTANTE:
+NÃO alterar layout.
+NÃO alterar design.
+NÃO alterar estrutura visual.
+NÃO alterar rotas.
+NÃO alterar componentes.
+NÃO alterar checkout.
+NÃO alterar CSS.
+NÃO alterar textos.
+NÃO alterar performance.
+NÃO reinstalar pixel.
+
+OBJETIVO:
+Remover COMPLETAMENTE os eventos manuais de:
+- InitiateCheckout
+- Purchase
+
+da landing page React.
+
+A Cakto ficará responsável por TODOS os eventos de:
+- checkout
+- compra
+- conversão.
+
+========================
+CONTEXTO
+========================
+
+Hoje existe duplicação porque:
+- a landing page React dispara eventos Meta
+- a Cakto também dispara os mesmos eventos.
+
+Isso está gerando:
+- múltiplos InitiateCheckout
+- métricas poluídas
+- duplicação no Meta Events Manager.
+
+========================
+MANTER
+========================
+
+O Meta Pixel deve continuar instalado.
+
+MANTER APENAS:
+fbq('track', 'PageView')
+
+na landing page.
+
+========================
+REMOVER COMPLETAMENTE
+========================
+
+TODOS os:
+- trackInitiateCheckout()
+- fbq('track', 'InitiateCheckout')
+- fbq('track', 'Purchase')
+
+da landing page React.
+
+========================
+REMOVER DOS BOTÕES PRINCIPAIS
+========================
+
+REMOVER QUALQUER tracking Meta manual dos botões:
+
+- LIBERAR MEU ACESSO
+- LIBERAR MEU ACESSO COMPLETO
+
+Esses botões devem:
+- apenas abrir checkout
+- apenas navegar normalmente
+- SEM disparar Meta Pixel manualmente.
+
+========================
+REMOVER TAMBÉM
+========================
+
+- onClick de tracking
+- listeners
+- hooks
+- useEffect
+- funções auxiliares
+- helpers
+- auto tracking
+- qualquer lógica relacionada a:
+  - InitiateCheckout
+  - Purchase.
+
+========================
+NÃO ALTERAR
+========================
+
+- funcionamento da página
+- funcionamento do checkout
+- funcionamento dos botões
+- links
+- scroll
+- âncoras
+- integração Cakto.
+
+========================
+GARANTIR
+========================
+
+Que:
+- o checkout continue abrindo normalmente
+- o pixel continue ativo
+- o PageView continue funcionando
+- a Cakto continue responsável por:
+  - InitiateCheckout
+  - Purchase.
+
+========================
+VALIDAÇÃO FINAL
+========================
+
+Após finalizar:
+- confirmar quais arquivos foram alterados
+- confirmar quais eventos foram removidos
+- confirmar que não existe mais:
+  - fbq('track', 'InitiateCheckout')
+  - fbq('track', 'Purchase')
+na landing page.
+
+========================
+RESULTADO FINAL ESPERADO
+========================
+
+Landing page React:
+✅ apenas PageView
+
+Botões:
+✅ apenas navegação normal
+
+Cakto:
+✅ InitiateCheckout
+✅ Purchase
+
+Sem:
+❌ duplicação
+❌ eventos fantasmas
+❌ conflitos
+❌ múltiplos disparos.
