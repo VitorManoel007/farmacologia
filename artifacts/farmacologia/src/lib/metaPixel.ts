@@ -23,6 +23,7 @@ declare global {
     };
     _fbq: Window["fbq"];
     __pixelReady?: boolean;
+    __checkoutLock?: boolean;
   }
 }
 
@@ -47,16 +48,24 @@ export function trackPageView(): void {
 
 // ─────────────────────────────────────────────────────────────────────────────
 // trackInitiateCheckout() — disparado SOMENTE via onClick explícito
-// Lock de 2s impede disparos duplicados por bubbling / double-click / StrictMode
+// window.__checkoutLock impede re-disparo por 3s (sobrevive a HMR e re-renders)
 // ─────────────────────────────────────────────────────────────────────────────
-let _lastCheckoutEvent = 0;
-
 export function trackInitiateCheckout(): void {
   if (typeof window.fbq === "undefined") return;
-  const now = Date.now();
-  if (now - _lastCheckoutEvent < 2000) return;
-  _lastCheckoutEvent = now;
+
+  if (window.__checkoutLock) {
+    console.log("InitiateCheckout BLOCKED by lock — duplicate prevented");
+    console.trace();
+    return;
+  }
+
+  window.__checkoutLock = true;
+  setTimeout(() => {
+    window.__checkoutLock = false;
+  }, 3000);
+
   console.log("InitiateCheckout fired");
+  console.trace();
   window.fbq("track", "InitiateCheckout");
 }
 

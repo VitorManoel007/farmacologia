@@ -1,0 +1,230 @@
+Você é um engenheiro especialista em React SPA + Meta Pixel debugging.
+
+O Meta Pixel já está funcionando.
+
+PORÉM:
+os eventos InitiateCheckout ainda estão disparando DUPLICADOS nos botões:
+
+* LIBERAR MEU ACESSO
+* LIBERAR MEU ACESSO COMPLETO
+
+Os prompts anteriores NÃO resolveram.
+
+Agora quero:
+DEBUG PROFUNDO e CORREÇÃO DEFINITIVA.
+
+NÃO quero gambiarra.
+NÃO quero nova arquitetura.
+NÃO quero reinstalar pixel.
+
+Quero descobrir EXATAMENTE qual parte está disparando o evento duas vezes.
+
+========================
+CONTEXTO
+========
+
+STACK:
+
+* React
+* TypeScript
+* Wouter
+* SPA
+* Replit
+
+Pixel já instalado.
+Eventos chegam no Meta.
+Problema atual:
+duplicação do InitiateCheckout.
+
+========================
+OBJETIVO
+========
+
+Garantir:
+
+# 1 clique
+
+1 evento InitiateCheckout
+
+SEM EXCEÇÃO.
+
+========================
+ETAPA 1 — MAPEAR TODOS OS DISPAROS
+==================================
+
+Procurar NO PROJETO INTEIRO:
+
+trackInitiateCheckout(
+fbq(
+InitiateCheckout
+
+Identificar TODOS os pontos que podem disparar:
+
+* onClick
+* useEffect
+* listener global
+* Link
+* wrapper
+* botão pai
+* navegação
+* auto tracking
+* hooks.
+
+Mostrar LISTA COMPLETA.
+
+========================
+ETAPA 2 — IDENTIFICAR DUPLICAÇÃO REAL
+=====================================
+
+Adicionar logs DETALHADOS:
+
+console.log('InitiateCheckout fired')
+console.trace()
+
+Quero descobrir:
+
+* QUAL componente dispara
+* QUANTAS vezes dispara
+* QUAL função chama novamente
+* QUAL arquivo causa o segundo disparo.
+
+========================
+ETAPA 3 — VALIDAR BOTÃO
+=======================
+
+Verificar se existe:
+
+* botão dentro de Link
+* Link dentro de botão
+* onClick no pai
+* onClick no filho
+* bubbling
+* propagation
+* múltiplos handlers.
+
+========================
+ETAPA 4 — VALIDAR STRICT MODE
+=============================
+
+Confirmar:
+StrictMode REMOVIDO.
+
+Verificar:
+main.tsx
+
+Garantir: <App />
+
+SEM:
+
+<React.StrictMode>
+
+========================
+ETAPA 5 — VALIDAR SPA ROUTING
+=============================
+
+Verificar se:
+mudança de rota
+ou navegação
+
+está disparando:
+InitiateCheckout novamente.
+
+Garantir:
+PageView e routing NÃO chamem checkout.
+
+========================
+ETAPA 6 — VALIDAR LISTENERS GLOBAIS
+===================================
+
+Procurar:
+
+* document.addEventListener
+* window.addEventListener
+* MutationObserver
+* auto detect checkout
+* auto detect link
+* observer
+* delegation.
+
+REMOVER qualquer sistema automático.
+
+========================
+ETAPA 7 — IMPLEMENTAR LOCK REAL
+===============================
+
+Dentro de:
+
+trackInitiateCheckout()
+
+Adicionar proteção ABSOLUTA:
+
+* bloquear disparos em menos de 3 segundos
+* usar timestamp global
+* impedir múltiplos fires.
+
+Exemplo esperado:
+
+if (window.__checkoutLock) return
+
+window.__checkoutLock = true
+
+setTimeout(() => {
+window.__checkoutLock = false
+}, 3000)
+
+========================
+ETAPA 8 — GARANTIR APENAS 1 EVENTO
+==================================
+
+O botão deve:
+
+1. disparar InitiateCheckout
+2. navegar para checkout
+3. NÃO disparar novamente.
+
+========================
+ETAPA 9 — VALIDAR META
+======================
+
+Garantir que:
+
+fbq('track', 'InitiateCheckout')
+
+existe apenas UMA vez por clique.
+
+NÃO usar:
+trackCustom.
+
+========================
+RESULTADO FINAL
+===============
+
+Ao clicar:
+
+LIBERAR MEU ACESSO
+
+OU
+
+LIBERAR MEU ACESSO COMPLETO
+
+Deve acontecer:
+
+✅ 1 clique
+✅ 1 console.log
+✅ 1 evento no Meta
+✅ 1 InitiateCheckout
+✅ zero duplicação.
+
+========================
+IMPORTANTE
+==========
+
+NÃO refatorar o projeto.
+NÃO mudar a landing page.
+NÃO reinstalar pixel.
+
+Quero apenas:
+
+* localizar a causa real
+* remover o segundo disparo
+* estabilizar completamente o tracking.
