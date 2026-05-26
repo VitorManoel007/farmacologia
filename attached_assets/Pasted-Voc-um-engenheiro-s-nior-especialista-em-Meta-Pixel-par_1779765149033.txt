@@ -1,0 +1,102 @@
+Você é um engenheiro sênior especialista em Meta Pixel para React + TypeScript + Wouter SPA.
+
+IMPORTANTE:
+NÃO alterar layout.
+NÃO alterar design.
+NÃO alterar estrutura visual.
+NÃO alterar rotas.
+NÃO alterar lógica da página.
+NÃO remover funcionalidades existentes.
+NÃO alterar checkout.
+NÃO alterar componentes visuais.
+
+OBJETIVO:
+Resolver APENAS a duplicação do evento InitiateCheckout no Meta Pixel.
+
+PROBLEMA:
+O site está disparando múltiplos eventos InitiateCheckout ao clicar nos botões reais de checkout.
+
+Hoje existem múltiplos:
+fbq('track', 'InitiateCheckout')
+
+Isso está causando duplicação no Meta Events Manager.
+
+REGRAS OBRIGATÓRIAS:
+
+1. Manter o pixel funcionando.
+2. NÃO quebrar o PageView.
+3. NÃO remover Purchase.
+4. NÃO alterar estrutura SPA.
+5. NÃO alterar CSS.
+6. NÃO alterar textos.
+7. NÃO alterar HTML visual.
+8. NÃO alterar performance.
+9. NÃO criar novos eventos.
+10. NÃO criar novos listeners globais.
+
+O QUE FAZER:
+
+1. Procurar TODOS os locais contendo:
+- InitiateCheckout
+- fbq(
+- trackInitiateCheckout
+- trackCustom
+
+2. Criar APENAS UMA função central:
+
+trackInitiateCheckout()
+
+3. Garantir que:
+APENAS ESSA FUNÇÃO contenha:
+
+fbq('track', 'InitiateCheckout')
+
+4. Remover TODOS os outros disparos duplicados de:
+fbq('track', 'InitiateCheckout')
+
+EXCETO o da função central.
+
+5. Garantir que SOMENTE os botões reais de checkout utilizem:
+
+onClick={() => trackInitiateCheckout()}
+
+Botões válidos:
+- LIBERAR MEU ACESSO
+- LIBERAR MEU ACESSO COMPLETO
+
+6. NÃO permitir disparo em:
+- botões âncora
+- scroll
+- useEffect
+- listeners globais
+- troca de rota
+- componentes duplicados
+
+7. Verificar React Strict Mode:
+Evitar disparo duplo em desenvolvimento.
+
+8. Implementar proteção anti-duplicação:
+Bloquear múltiplos InitiateCheckout em menos de 2 segundos.
+
+9. NÃO tocar no restante do pixel.
+
+10. NÃO alterar Purchase.
+
+11. NÃO alterar PageView.
+
+12. Após finalizar:
+mostrar exatamente:
+- quais arquivos foram alterados
+- quais linhas foram removidas
+- onde estava a duplicação
+- onde ficou a função central.
+
+RESULTADO FINAL ESPERADO:
+
+Ao clicar:
+- LIBERAR MEU ACESSO
+ou
+- LIBERAR MEU ACESSO COMPLETO
+
+deve disparar:
+APENAS 1 evento InitiateCheckout no Meta Events Manager.
